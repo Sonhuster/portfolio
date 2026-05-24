@@ -1,0 +1,6 @@
+{
+  "name": "Scientist Portfolio",
+  "description": "Portfolio website of a Master's student and scientist, featuring research, philosophy, memories, and academic blogs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
