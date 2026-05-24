@@ -1,19 +1,20 @@
 import { BlogPost, Achievement, ResearchProject, Experiment, Memory, PhilosophyItem } from "./types";
 
 export const profileData = {
-  name: "Sơn Đỗ Viết",
-  title: "MSc Candidate in Biotechnology",
-  institution: "Hanoi University of Science and Technology (HUST)",
-  department: "School of Life Sciences (Viện Công nghệ Sinh học & Công nghệ Thực phẩm)",
+  name: "Van-Son Dinh",
+  title: "MSc Candidate in Applied Mechanics (Aerospaces)",
+  institution: "National Taiwan University (NTU)",
+  department: "Institute of Applied Mechanics",
   email: "sondv.hust@gmail.com",
   location: "Hanoi, Vietnam",
   avatarUrl: "", // We can use elegant initials or clean styling
-  bio: "Là nghiên cứu sinh cao học ngành Công nghệ Sinh học tại Đại học Bách khoa Hà Nội (HUST). Đam mê của mình nằm ở giao thoa giữa Sinh học thực nghiệm (Wet Lab) và Sinh tin học tính toán (Dry Lab). Mình tập trung vào việc nghiên cứu enzyme tái tổ hợp và tối ưu hóa quy trình sinh học thông qua các mô hình học máy để giải quyết các vấn đề môi trường và y dược.",
+  bio: "A simple man with passion on Math, Computing Engineeing, Programming, and Games",
   interests: [
-    "Biochemistry & Enzyme Engineering",
-    "Metagenomics Analysis",
-    "Computational Structural Biology",
-    "Machine Learning in Bioinformatics"
+    "Numerical Methods",
+    "Applied Mathematics",
+    "Fluid Mechanics",
+    "Applied Machine Learning in CFD",
+    "Turbomachinery / Aeroacoustic"
   ]
 };
 

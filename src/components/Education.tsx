@@ -93,7 +93,7 @@ export default function Education() {
           {/* Education Timeline */}
           <div className="bg-white rounded-2xl border border-[#e9ecef] p-6 shadow-xs space-y-6">
             <h5 className="font-display font-medium text-sm text-[#2d3436] border-b border-slate-100 pb-3 flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-blue-600" /> Quá trình học tập
+              <Calendar className="w-4 h-4 text-blue-600" /> Education
             </h5>
 
             <div className="relative pl-6 border-l border-slate-100 space-y-8">
@@ -103,13 +103,13 @@ export default function Education() {
                   <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
                 </span>
                 <div className="flex justify-between items-start flex-wrap gap-2">
-                  <h6 className="font-display font-semibold text-sm text-slate-900">Thạc sĩ Công nghệ Sinh học (MSc Candidate)</h6>
-                  <span className="px-2 py-0.5 bg-blue-50 text-blue-600 border border-blue-100 rounded text-[10px] font-mono">2024 - Hiện tại (Expected 2026)</span>
+                  <h6 className="font-display font-semibold text-sm text-slate-900"> Applied Mechanics (MSc) </h6>
+                  <span className="px-2 py-0.5 bg-blue-50 text-blue-600 border border-blue-100 rounded text-[10px] font-mono">2026 - Now (Expected 2028)</span>
                 </div>
                 <p className="text-xs text-slate-500 mt-0.5 font-medium">{profileData.institution}</p>
                 <p className="text-xs text-slate-400 mt-1">{profileData.department}</p>
                 <div className="mt-2 text-xs text-slate-600 leading-relaxed font-sans bg-slate-50 rounded-lg p-2.5 border border-slate-100/80">
-                  ⚡ Luận văn định hướng: Tối ưu hóa biểu hiện enzyme thủy phân và dự đoán cấu trúc 3D kết hợp Biological Machine Learning.
+                  • Thesis topic: LES + Particle Solver + Machine Learning.
                 </div>
               </div>
 
@@ -119,13 +119,13 @@ export default function Education() {
                   <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
                 </span>
                 <div className="flex justify-between items-start flex-wrap gap-2">
-                  <h6 className="font-display font-semibold text-sm text-slate-900">Cử nhân Công nghệ Sinh học (BSc in Biotechnology)</h6>
+                  <h6 className="font-display font-semibold text-sm text-slate-900">Aerospace Engineering (MSc - Discontinued)</h6>
                   <span className="px-2 py-0.5 bg-slate-50 text-slate-500 border border-slate-200 rounded text-[10px] font-mono">2020 - 2024</span>
                 </div>
                 <p className="text-xs text-slate-500 mt-0.5 font-medium">{profileData.institution}</p>
-                <p className="text-xs text-slate-400 mt-1">Viện Công nghệ Sinh học & Công nghệ Thực phẩm</p>
+                <p className="text-xs text-slate-400 mt-1">Department of Aerospace Engineering</p>
                 <div className="mt-2 text-xs text-slate-600 leading-relaxed font-sans bg-slate-50 rounded-lg p-2.5 border border-slate-100/80">
-                  🏆 Đạt giải thưởng **Khóa luận tốt nghiệp xuất sắc (BSc Thesis Award)** về tối ưu hóa quy trình biểu hiện enzyme phân hủy nhựa của chủng vi khuẩn đại dương.
+                  • Thesis topic: Turbulence modeling, high-fidelity advective schemes in Actuator Line Methods for Helicopter flow.
                 </div>
               </div>
             </div>
