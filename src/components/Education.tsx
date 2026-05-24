@@ -54,6 +54,7 @@ export default function Education() {
         {/* ================= LEFT SIDE COLUMN ================= */}
         <div className="lg:col-span- così lg:col-span-5 space-y-6">
           
+          {/* Mockup 1: "add my avatar here" Box */}
           <div className="bg-white rounded-2xl border border-slate-200/80 p-5 shadow-xs flex items-center gap-5 hover:border-blue-200 transition-colors duration-300 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50/40 rounded-full blur-2xl -mr-6 -mt-6 group-hover:bg-blue-100/40 transition-colors" />
             
@@ -73,7 +74,8 @@ export default function Education() {
                 Van-Son Dinh
               </h4>
               <p className="text-[11px] font-mono text-slate-500 mt-1 flex items-center gap-1">
-                <Plane className="w-3.5 h-3.5 text-blue-500" />
+                <Plane  className="w-3.5 h-3.5 text-blue-500"  style={{ animationDuration: '6s' }} />
+                <Plane  className="w-3.5 h-3.5 text-blue-500" />
                 MSc Student in Applied Mechanics
               </p>
             </div>
