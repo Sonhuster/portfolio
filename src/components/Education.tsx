@@ -81,16 +81,6 @@ export default function Education() {
           </div>
 
           {/* Mockup 2: Personal Highlight Info Card */}
-          <div className="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-xs space-y-4 hover:border-slate-300/80 transition-colors duration-300">
-            {/* <div className="space-y-3">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-blue-50 text-blue-700 border border-blue-100">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
-                MSc CANDIDATE • 2026-2028
-              </span>
-              <h4 className="text-xl font-display font-bold text-slate-950 tracking-tight">{profileData.name}</h4>
-              <p className="text-xs text-slate-500 leading-relaxed font-mono">{profileData.title} (Aerospaces)</p>
-            </div> */}
-
             <p className="text-slate-600 text-xs md:text-sm leading-relaxed border-t border-slate-100 pt-3">
               A simple man with passion on Math, Computing Engineering, Programming, and Games
             </p>
