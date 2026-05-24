@@ -37,9 +37,8 @@ export default function Education() {
           <GraduationCap className="w-3.5 h-3.5" /> PROFILE & EDUCATION
         </span>
         <h3 className="text-2xl md:text-3xl font-display font-medium text-[#2d3436] mt-2">
-          Academic Journey
+          Academic Journey 
         </h3>
-        </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
