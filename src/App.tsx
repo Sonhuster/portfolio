@@ -35,20 +35,20 @@ export default function App() {
 
   const menuCategories = [
     {
-      title: "Hồ sơ & Giới thiệu",
+      title: "Van-Son Dinh",
       items: [
-        { id: "education", label: "Học vấn & Đào tạo", icon: GraduationCap },
-        { id: "research-interests", label: "Hướng Nghiên cứu", icon: Dna },
-        { id: "publications", label: "Công bố & Thành tích", icon: FileText }
+        { id: "education", label: "Education", icon: GraduationCap },
+        { id: "research-interests", label: "Research interests", icon: Dna },
+        { id: "publications", label: "Achievements", icon: FileText }
       ]
     },
     {
-      title: "Hoạt động & Góc nhìn",
+      title: "My Personal Corner",
       items: [
-        { id: "philosophy", label: "Quan điểm sống", icon: Compass },
-        { id: "lab-simulator", label: "Thí nghiệm ảo", icon: FlaskConical },
-        { id: "memories", label: "Nhật ký & Kỷ niệm", icon: Heart },
-        { id: "blog", label: "Blog học thuật", icon: BookOpen }
+        { id: "philosophy", label: "My life perspectives", icon: Compass },
+        { id: "lab-simulator", label: "Fun lab", icon: FlaskConical },
+        { id: "memories", label: "Daily life", icon: Heart },
+        { id: "blog", label: "Blogs", icon: BookOpen }
       ]
     }
   ];
