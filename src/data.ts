@@ -258,7 +258,7 @@ export const educationHistory: EducationItem[] = [
     type: "current"
   },
   {
-    degree: "Aerospace Engineering (MSc - Discontinued)",
+    degree: "Aerospace Engineering (MSc - Drroped)",
     institution: "KAIST (Korea Advanced Institute of Science and Technology)",
     department: "Department of Aerospace Engineering",
     period: "Feb 2024 - Oct 2024",
