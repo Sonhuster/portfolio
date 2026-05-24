@@ -21,7 +21,7 @@ export const profileData = {
   email: "sondv.hust@gmail.com",
   location: "Dien Chau, Nghe An, Vietnam",
   avatarUrl: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=200&h=200",
-  bio: "A simple man with passion on Math, Computing Engineering, Programming, and Games",
+  bio: "Math, Computing Engineering, Programming, Games, and Minimalist",
   interests: [
     "Numerical Methods & CFD",
     "Applied Mathematics & Modeling",
@@ -261,17 +261,21 @@ export const educationHistory: EducationItem[] = [
     degree: "Aerospace Engineering (MSc - Discontinued)",
     institution: "KAIST (Korea Advanced Institute of Science and Technology)",
     department: "Department of Aerospace Engineering",
-    period: "Feb 2024 – Oct 2024",
-    details: "Thesis topic: Turbulence modeling, high-fidelity advective schemes in Actuator Line Methods for Helicopter flow. GPA: 3.58/4.3 (first semester).",
+    period: "Feb 2024 - Oct 2024",
+    details: ["Thesis topic: Turbulence modeling, high-fidelity advective schemes in Actuator Line Methods for Helicopter flow.",
+    "GPA: 3.58/4.3 (first semester)"
+    ],
     isCurrent: false,
     type: "discontinued"
   },
   {
-    degree: "Aerospace Engineering (BC)",
+    degree: "Aerospace Engineering (BSc)",
     institution: "Hanoi University of Science and Technology (HUST)",
     department: "School of Transportation Engineering",
     period: "Aug 2019 - Aug 2023",
-    details: "Thesis topic: 'Numerical investigation of an Electric Motor Cooling ability through the Centre Body of an Electric Ducted Fan' (Grade: 9.45/10). Ranked 1st in class, GPA: 3.53/4.",
+    details: [
+    "Thesis topic: 'Numerical investigation of an Electric Motor Cooling ability through the Centre Body of an Electric Ducted Fan' (Grade: 9.45/10)",
+    "GPA: 3.53/4 (Ranked 1st in class)"],
     isCurrent: false,
     type: "completed"
   }
