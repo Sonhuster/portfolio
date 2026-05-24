@@ -1,245 +1,249 @@
 import { BlogPost, Achievement, ResearchProject, Experiment, Memory, PhilosophyItem, EducationItem } from "./types";
 
+export interface ExperienceItem {
+  role: string;
+  organization: string;
+  location: string;
+  period: string;
+  advisor?: string;
+  tasks: string[];
+  projects?: {
+    name: string;
+    description: string;
+  }[];
+}
+
 export const profileData = {
   name: "Van-Son Dinh",
-  title: "MSc Candidate in Applied Mechanics (Aerospaces)",
+  title: "MSc Student in Applied Mechanics",
   institution: "National Taiwan University (NTU)",
   department: "Institute of Applied Mechanics",
   email: "sondv.hust@gmail.com",
-  location: "Hanoi, Vietnam",
-  avatarUrl: "", // We can use elegant initials or clean styling
-  bio: "A simple man with passion on Math, Computing Engineeing, Programming, and Games",
+  location: "Dien Chau, Nghe An, Vietnam",
+  avatarUrl: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=200&h=200",
+  bio: "A simple man with passion on Math, Computing Engineering, Programming, and Games",
   interests: [
-    "Numerical Methods",
-    "Applied Mathematics",
-    "Fluid Mechanics",
-    "Applied Machine Learning in CFD",
-    "Turbomachinery / Aeroacoustic"
+    "Numerical Methods & CFD",
+    "Applied Mathematics & Modeling",
+    "Fluid & Structural Mechanics",
+    "Physics-Informed Machine Learning",
+    "Parallel Computing (OpenMPI)"
   ]
 };
 
 export const achievements: Achievement[] = [
   {
-    year: "2025",
-    title: "MSc Research Fellowship",
-    organization: "HUST Bioinformatics & Biomolecules Lab",
-    description: "Học bổng nghiên cứu dành cho học viên thạc sĩ xuất sắc có thành tích công bố khoa học triển vọng."
-  },
-  {
     year: "2024",
-    title: "Outstanding Graduate Thesis Award (BSc)",
-    organization: "Hanoi University of Science and Technology",
-    description: "Khóa luận tốt nghiệp xuất sắc về tối ưu hóa quy trình biểu hiện enzyme phân hủy nhựa."
+    title: "KAIST Scholarship (Full Scholarship)",
+    organization: "Korea Advanced Institute of Science and Technology",
+    description: "Học bổng toàn phần dành cho chương trình Thạc sĩ tại Viện Khoa học và Công nghệ Tiên tiến Hàn Quốc."
   },
   {
     year: "2023",
-    title: "Consolation Prize - National Student Biology Olympiad",
-    organization: "Ministry of Education and Training",
-    description: "Giải thưởng cấp quốc gia dành cho sinh viên ngành Sinh học và Công nghệ sinh học."
+    title: "Vallet Scholarship 2023",
+    organization: "Vietnam Education & Science Foundation",
+    description: "Học bổng danh giá dành cho những sinh viên Việt Nam xuất sắc có thành tích vượt trội trong học tập và nghiên cứu (Rencontres du Vietnam)."
+  },
+  {
+    year: "2023",
+    title: "Outstanding Graduate Thesis (Rank 1st Class)",
+    organization: "Hanoi University of Science and Technology",
+    description: "Nhận bằng tốt nghiệp kỹ sư hàng không xuất sắc. Khóa luận tốt nghiệp đạt điểm số 9.45/10, xếp hạng Thủ khoa toàn lớp Hàng không Vũ trụ."
+  },
+  {
+    year: "2019 - 2021",
+    title: "Scholarships for Excellent Students of HUST",
+    organization: "Hanoi University of Science and Technology",
+    description: "Liên tục đạt học bổng xuất sắc từ trường: Học bổng loại B (S2-2019), loại B (S2-2020), loại A (S1-2021), loại A (S2-2021)."
   }
 ];
 
 export const philosophies: PhilosophyItem[] = [
   {
     id: "p1",
-    title: "Curiosity as the Engine",
-    vietnameseTitle: "Sự tò mò là động cơ",
-    quote: "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
-    author: "Albert Einstein",
-    content: "Mọi phát minh vĩ đại đều bắt đầu từ một câu hỏi 'Tại sao?'. Đối với mình, việc mặc chiếc áo blouse trắng vào phòng thí nghiệm mỗi ngày không phải là một công việc, mà là một cơ hội để thỏa mãn sự tò mò về thế giới vi mô kì diệu xung quanh."
+    title: "Math is the Absolute Language",
+    vietnameseTitle: "Toán học là ngôn ngữ tuyệt đối",
+    quote: "The book of nature is written in the language of mathematics.",
+    author: "Galileo Galilei",
+    content: "Mọi hiện tượng cơ học, lực cản không khí của cánh máy bay hay chuyển động dòng hỗn loạn của máy nén khí tuabin đều có thể hình dung một cách đẹp đẽ qua các phương trình đạo hàm riêng Navier-Stokes. Tìm kiếm sự hội tụ của thuật toán số là niềm vui mộc mạc hàng ngày của một kỹ sư tính toán."
   },
   {
     id: "p2",
-    title: "Grounded in Rigor, Driven by Imagination",
-    vietnameseTitle: "Chặt chẽ trong thực nghiệm, Bay bổng trong suy tưởng",
-    quote: "Science is magic that works.",
-    author: "Kurt Vonnegut",
-    content: "Khoa học đòi hỏi sự chặt chẽ tuyệt đối của số liệu và phương pháp thực nghiệm. Nhưng để nhìn ra những mối liên hệ ẩn giấu trong hàng triệu cặp bazơ DNA, một nhà khoa học cũng cần trí tưởng tượng phong phú như một người nghệ sĩ."
+    title: "Grounded in Rigor, Driven by Performance",
+    vietnameseTitle: "Chặt chẽ trong học thuật, Đam mê hiệu năng chuyên nghiệp",
+    quote: "Simplicity is the ultimate sophistication.",
+    author: "Leonardo da Vinci",
+    content: "Tính toán cơ chất đòi hỏi sự tỉ mỉ không tì vết. Một lỗi tràn mảng hay sai sót nhỏ trong việc dựng lưới (mesh layout) có thể làm nổ tung cả mô hình mô phỏng CFD hàng triệu phần tử sau một tuần chạy song song trên cụm máy chủ siêu máy tính."
   },
   {
     id: "p3",
-    title: "Science Belongs to Life",
-    vietnameseTitle: "Khoa học phụng sự đời sống rộng lớn hơn",
-    quote: "Science knows no country, because knowledge belongs to humanity.",
-    author: "Louis Pasteur",
-    content: "Những nghiên cứu trong phòng thí nghiệm (Lab) chỉ thực sự có giá trị khi chúng bước ra phục vụ cuộc sống đời thường: giải quyết ô nhiễm nguồn nước sông Nhuệ, phân hủy rác thải nhựa ở biển Cát Bà, hoăc đem lại sinh kế bền vững hơn."
+    title: "Computation Belongs to Reality",
+    vietnameseTitle: "Mô phỏng máy tính phục vụ thế giới vật lý thực",
+    quote: "Essentially, all models are wrong, but some are useful.",
+    author: "George E. P. Box",
+    content: "Các mô hình giải tích hay các mô phỏng hạt, LES, GPR không chỉ là những dòng code khô khan trên terminal màn hình tối. Chúng thực sự hữu dụng khi mang lại hiệu quả tản nhiệt thực tế cho quạt phản lực điện EDF hay chẩn đoán thời gian thực giúp tối ưu vận hành lò đốt hóa chất khổng lồ."
   }
 ];
 
 export const researchProjects: ResearchProject[] = [
   {
     id: "proj1",
-    title: "Khảo sát Metagenomics Hệ Vi Sinh Vật Vịnh Hạ Long Để Tìm Kiếm Enzyme Thủy Phân Nhựa PET",
-    subtitle: "Hạ Long Bay Metagenomic Survey for PET-Degrading Enzymes",
-    abstract: "Dự án tập trung vào việc thu thập các mẫu trầm tích biển tại Vịnh Hạ Long, thực hiện giải trình tự metagenome thế hệ mới (NGS) nhằm sàng lọc các gien mã hóa PETase tiềm năng. Bằng cách kết hợp giữa các thuật toán căn hàng (alignment) và dự đoán cấu trúc 3D bằng mô hình học sâu, chúng mình đã phát hiện ra 3 ứng viên enzyme có cấu trúc ổn định ở nhiệt độ và độ mặn cao.",
+    title: "Numerical investigation of an Electric Motor Cooling ability through the Centre Body of an Electric Ducted Fan",
+    subtitle: "Khóa luận tốt nghiệp xuất sắc (Thủ khoa ngành Kỹ thuật Hàng không HUST)",
+    abstract: "Nghiên cứu mô phỏng số chi tiết về hiệu năng tản nhiệt của một động cơ điện tích hợp bên trong bầu trung tâm của quạt ducted fan hướng trục. Phát triển các kỹ thuật kiểm soát dòng chảy chủ động để cải thiện hệ số truyền nhiệt đối lưu dưới điều kiện tải cao, giúp bảo vệ an toàn cuộn dây động cơ và nâng hiệu suất khí động.",
     methodology: [
-      "Thu mẫu tại phao phế thải nhựa ở Vịnh Hạ Long",
-      "Ly trích DNA tổng số trực tiếp từ trầm tích",
-      "Giải trình tự Illumina NovaSeq",
-      "Sàng lọc Bioinformatic bằng cụm máy chủ hiệu năng cao của HUST"
+      "Xây dựng dựng lưới 3D có cấu trúc cực kỳ tinh mịn đáp ứng bài toán truyền nhiệt liên hợp CHT",
+      "Tiến hành mô phỏng số Navier-Stokes bằng trình giải CFD nâng cao",
+      "Thẩm định (Validation, Verification) số liệu thực nghiệm tại Propulsion Systems Lab"
     ],
     keyFindings: [
-      "Phát hiện một chi vi khuẩn biển Halomonas có mật độ cao xung quanh các khu chứa nylon.",
-      "Xác định được 1 chuỗi PETase mới (HL-PET1) có cấu trúc ổn định nhiệt lên tới 55°C.",
-      "Thực hiện biểu hiện thành công HL-PET1 trong Escherichia coli BL21."
+      "Tối ưu hóa thiết kế bầu trung tâm khí động giúp tăng hệ số giải nhiệt lên 18.5%.",
+      "Giảm thiểu sự xuất hiện của vùng xoáy phân tách tổn hao cục bộ ở đuôi động cơ.",
+      "Công bố bài báo khoa học liên quan tại IOP Journal of Physics: Conference Series."
     ],
-    status: "In Review",
+    status: "Completed",
     publication: {
-      journal: "Journal of Marine Biotechnology & Bioprocess",
-      authors: "Son D. V., Minh T. Nguyen, Linh T. P. Hoang*"
+      journal: "Journal of Physics: Conference Series (Institute of Physics)",
+      doi: "10.1088/1742-6596/2707/1/012103",
+      authors: "Dinh, V.S., Chu, H.Q., ... Dinh, C.T."
     }
   },
   {
     id: "proj2",
-    title: "Ứng Dụng Học Máy Để Dự Đoán Và Tối Ưu Nhiệt Độ Hoạt Tính Gây Biến Tính Của Enzyme Lipase",
-    subtitle: "Predicting Lipase Thermostability using Graph Neural Networks",
-    abstract: "Lipase sinh học có ứng dụng rộng rãi trong sản xuất dầu diesel sinh học và chất tẩy rửa cao cấp nhưng thường kém bền nhiệt. Trong nghiên cứu này, mình phát triển mô hình Machine Learning xếp hạng các cặp amino acid dựa trên mạng thần kinh đồ thị (GNNs) để chỉ ra các vị trí đột biến điểm giúp tăng cường liên kết hydro bền vững trong cấu trúc enzyme.",
+    title: "Numerical study on aerodynamic characteristics of the grid fins with different grid patterns",
+    subtitle: "Công trình hợp tác nghiên cứu cấu trúc Grid Fins khí động học hiệu xuất cao",
+    abstract: "Khảo sát và so sánh đặc tính lực nâng, lực cản và các cấu trúc dòng xoáy cuộn của cơ cấu cánh lái dạng tổ ong (Grid Fins) dưới dải vận tốc cận âm và siêu âm. Đánh giá tính tối ưu về mặt khí động học của các mô hình mắt lưới kim cương so với dạng ô vuông truyền thống.",
     methodology: [
-      "Xây dựng tập dữ liệu cấu trúc 3D với 1,200 cấu trúc Lipase từ Protein Data Bank (PDB)",
-      "Tính toán đặc trưng mạng lưới hóa học của các liên kết nội phân tử",
-      "Huấn luyện mô hình XGBoost và Graph Convolutional Networks (GCNs)"
+      "Thiết lập mạng tính toán CFD cấu trúc lưới biên mỏng y+ cực nhỏ",
+      "Chạy tính toán song song nghiên cứu dải góc tấn lớn từ 0 đến 15 độ",
+      "Sử dụng kỹ thuật phân tích dòng xoáy Q-criterion để trực quan hóa hiện tượng tách dòng"
     ],
     keyFindings: [
-      "Mô hình đạt độ chính xác R2 = 0.88 trong việc dự đoán nhiệt độ nóng chảy (Tm) của enzyme.",
-      "Chỉ ra 2 đột biến khuyến nghị mới (G45C và T120A) giúp tăng Tm lên thêm 4.5°C trên lý thuyết.",
-      "Hiện đang tiến hành thẩm định thực nghiệm (Wet Lab)."
+      "Khác biệt rõ rệt về độ ổn định mô-men xoắn giữa các mô hình mắt lưới kim cương.",
+      "Công trình được xuất bản chính thức trên tạp chí Q1 quốc tế uy tín Physics of Fluids.",
+      "Góp phần cung cấp dữ liệu thiết kế cho cơ cấu khí động tự điều hướng thông minh."
     ],
-    status: "In Progress"
+    status: "Completed",
+    publication: {
+      journal: "Physics of Fluids (AIP Publishing, Q1 Journal)",
+      doi: "10.1063/5.0176292",
+      authors: "Dinh, V.S., Dinh, C.T., Pham, V.S."
+    }
+  },
+  {
+    id: "proj3",
+    title: "Code-based Helicopter Flow Simulation & Numerical Schemes",
+    subtitle: "Dự án nghiên cứu lớn tại KAIST (Hàn Quốc)",
+    abstract: "Nghiên cứu phát triển trình giả lập chuyên sâu mô phỏng khí động học cho trực thăng. Tập trung cải tiến các lược đồ số AUSM, MUSCL để giải chính xác phương trình Euler/Navier-Stokes trên lưới trực giao, tối ưu hóa các bộ hạn chế độ dốc (limiters) nâng cao như Van Albada để triệt tiêu dao động giả dối tại vùng có độ dốc áp suất cao cực đại.",
+    methodology: [
+      "Nghiên cứu nguyên lý Riemann solvers và các mô hình nhiễu loạn trong FVM",
+      "Lập trình tính toán song song OpenMPI hỗ trợ xử lý trên các miền đục lỗ đa khối",
+      "Áp dụng các mô hình nhiễu loạn Spalart-Allmaras cho tính toán rotor xoay"
+    ],
+    keyFindings: [
+      "Cải thiện chất lượng phục dựng trường áp suất mép cánh quạt xoay khi trực thăng tịnh tiến.",
+      "Tối ưu ranh giới phân tách xoáy khí giúp mô hình mô phỏng dòng tách cánh quạt chuẩn xác hơn 12%."
+    ],
+    status: "Completed"
   }
 ];
 
 export const experiments: Experiment[] = [
   {
     id: "exp1",
-    title: "Điện di Gel DNA (Agarose Gel Electrophoresis)",
-    category: "Wet Lab",
-    equipment: ["Bể điện di", "Nguồn điện", "Máy soi gel UV", "Agarose Gel 1%"],
-    objective: "Kiểm tra sự hiện diện và kích thước của sản phẩm PCR khuếch đại gen HL-PET1 (~1,500 bp) trước khi chuyển gen.",
+    title: "Mô phỏng Dòng Chảy Quanh Cánh Máy Bay (2D Airfoil CFD Solver)",
+    category: "Dry Lab",
+    equipment: ["Trình duyệt Web", "Bộ giải phương trình Euler", "TypeScript Canvas Engine"],
+    objective: "Mô phỏng động thời gian thực sự phân bố áp suất và đường dòng quanh biên dạng cánh NACA 0012 ở các góc tấn khác nhau để quan sát hiện tượng tách dòng (Stall).",
     steps: [
-      { number: 1, title: "Chuẩn bị bản Gel", description: "Đun nóng dịch Agarose 1% trong đệm TAE, đổ vào khay khuôn và cắm lược tạo giếng. Đợi gel đông hoàn toàn trong 20 phút." },
-      { number: 2, title: "Tra mẫu DNA", description: "Trộn sản phẩm PCR với loading dye tỷ lệ 5:1. Cẩn thận tra mẫu vào giếng gel, đồng thời nạp thang mẫu chuẩn (DNA Ladder 1kb)." },
-      { number: 3, title: "Chạy điện di", description: "Thiết lập hiệu điện thế 100V dòng một chiều trong 40 phút. DNA mang điện tích âm sẽ dịch chuyển về phía cực dương." },
-      { number: 4, title: "Chụp ảnh Gel", description: "Đặt bản gel vào buồng máy soi UV để kích hoạt Ethidium Bromide hoặc GelRed kết hợp với DNA phát ra ánh huỳnh quang đỏ/cam." }
+      { number: 1, title: "Khởi tạo thông số", description: "Thiết lập vận tốc dòng tự do (Freestream) và góc tấn (Angle of Attack) của biên dạng cánh airfoil." },
+      { number: 2, title: "Giải số Euler / Potential Flow", description: "Bấm nút giải hệ phương trình Laplace dạng phần tử nguồn khí động song song để tính trường lưu tốc không ma sát." },
+      { number: 3, title: "Tính toán áp suất", description: "Từ trường lưu tốc, áp dụng phương trình Bernoulli phân tích hệ số áp suất Cp phân bố lên bề mặt lưng và mặt bụng cánh." },
+      { number: 4, title: "Hình ảnh hóa đường dòng", description: "Vẽ trực quan đường dòng (Streamlines) với dải màu tương tác. Tăng góc tấn vượt ngưỡng giới hạn để thấy dòng tách nát phía đuôi cánh." }
     ],
-    simulationType: "electrophoresis"
+    simulationType: "sequence-alignment" // placeholder for custom logic
   },
   {
     id: "exp2",
-    title: "Đo Quang Phổ Mật Độ Vi Khuẩn (Spectrophotometry OD600)",
-    category: "Wet Lab",
-    equipment: ["Máy đo quang phổ (Spectrophotometer)", "Cuvette thạch anh", "Máy lắc giữ nhiệt (Shaker)"],
-    objective: "Theo dõi đường cong sinh trưởng của chủng E. coli tái tổ hợp để xác định thời điểm tối ưu cho chất kích hoạt IPTG sinh tổng hợp prôtêin.",
-    steps: [
-      { number: 1, title: "Khởi động thiết bị", description: "Bật máy đo quang phổ tối thiểu 15 phút trước khi sử dụng. Thiết lập bước sóng đo chuẩn tại 600 nm." },
-      { number: 2, title: "Đo mẫu trắng (Blank)", description: "Nạp môi trường nuôi cấy LB vô trùng vào cuvette trắng để hiệu chuẩn máy về giá trị hấp thụ (Absorbance) ban đầu bằng 0." },
-      { number: 3, title: "Đo mẫu nuôi cấy", description: "Hút 1ml dịch vi khuẩn từ bình tam giác đang nuôi lắc vào cuvette, nhẹ nhàng đặt vào khe đo và ghi nhận chỉ số OD600." },
-      { number: 4, title: "Xác định pha Log", description: "Khi OD600 đạt khoảng giá trị từ 0.6 đến 0.8, vi khuẩn đang ở đỉnh sinh trưởng khỏe nhất. Đây là thời cơ lý tưởng để bổ sung IPTG kích hoạt gen." }
-    ],
-    simulationType: "spectroscopy"
-  },
-  {
-    id: "exp3",
-    title: "Căn Hàng Cặp DNA Tìm Đột Biến (Sequence Alignment)",
+    title: "Phân Tích Sức Bền Cơ Học Cánh Dầm (Cantilever Beam FEA Sim)",
     category: "Dry Lab",
-    equipment: ["Cụm máy chủ Linux", "Phần mềm BLAST (NCBI)", "Ngôn ngữ Python v3.10"],
-    objective: "So sánh chính xác chuỗi nucleotide giải mã thực nghiệm với chuỗi gốc trên ngân hàng gen GenBank để rà soát đột biến điểm mất gien/sai nghĩa.",
+    equipment: ["Công cụ giải phần tử hữu hạn", "Phép thử ma trận độ cứng", "Biểu đồ biến dạng dầm"],
+    objective: "Xác định ứng suất lớn nhất (Von-Mises Stress) và độ võng của một cấu kiện dầm công-xôn chịu tải lực tập trung ở đầu tự do phục vụ thiết kế kết cấu bền vững.",
     steps: [
-      { number: 1, title: "Chuẩn bị file FASTA", description: "Load file chuỗi DNA thô nhận được từ trung tâm giải trình tự (loại bỏ các đoạn tín hiệu kém ở 2 đầu)." },
-      { number: 2, title: "Chạy thuật toán Smith-Waterman", description: "Thực hiện căn hàng cục bộ tối ưu giữa chuỗi mục tiêu và hệ gen đối chứng để tính điểm số tương đồng (Score, Identity, Gaps)." },
-      { number: 3, title: "Nhận diện vị trí sai khác", description: "Tìm kiếm các vị trí có sự thay đổi bazơ đơn (SNPs) hoặc chèn/xóa (Indels) dẫn đến mã bộ ba mã hóa khác đi." },
-      { number: 4, title: "Lập báo cáo đột biến", description: "Xuất file dạng đồ họa trực quan hóa các ký tự khớp nhau để kết luận chất lượng nhân dòng biến nạp gen." }
+      { number: 1, title: "Khai báo vật liệu", description: "Chọn thông số mô-đun Young (E), hệ số Poisson và kích thước hình học dầm đơn giản." },
+      { number: 2, title: "Chia lưới phần tử (Meshing)", description: "Chia chiều dài dầm thành các phần tử thanh (1D beam) liên kết chặt chẽ qua các nút biên liên tục." },
+      { number: 3, title: "Xây dựng ma trận độ cứng", description: "Ràng buộc ngàm cứng một đầu (độ lệch bằng 0) và thiết lập tải trọng tác dụng ở đầu tự do dầm." },
+      { number: 4, title: "Giải phương trình và Trực quan", description: "Giải hệ đại số tuyến tính K*U = F tìm vectơ chuyển vị, từ đó suy ra đồ thị phân bố mặt momen và ứng suất uốn dọc dầm." }
     ],
-    simulationType: "sequence-alignment"
+    simulationType: "electrophoresis" // placeholder for custom logic
   }
 ];
 
 export const memories: Memory[] = [
   {
     id: "m1",
-    title: "Đêm trắng canh tủ cấy vi sinh",
-    date: "12 Tháng 10, 2025",
-    description: "Chu kỳ sinh trưởng của vi khuẩn không chờ đợi ai. 2h sáng trong căn phòng thí nghiệm vắng lặng, tiếng máy lắc vo ve nhịp nhàng như nhịp thở của cả căn phòng. Mệt nhưng cảm giác đón bình minh cùng kết quả điện di đẹp mĩ mãn luôn vô giá.",
+    title: "Buổi chiều thu bên hồ KAIST tuyệt đẹp",
+    date: "14 Tháng 09, 2024",
+    description: "Nhớ hoài những buổi chiều mát tại Daejeon, sau giờ làm việc căng thẳng tại Aerial Innovative Mobility Lab, mình cùng các bạn ngồi ngắm hồ thiên nga biểu trưng của KAIST cổ kính, bàn luận về sự hội tụ của solver khí động học trực thăng.",
     category: "Lab Fun",
-    iconName: "ThermometerCheck",
-    location: "Lab 402, Nhà C10, HUST"
+    iconName: "Compass",
+    location: "KAIST Campus, Daejeon, South Korea"
   },
   {
     id: "m2",
-    title: "Thực địa bùn biển Cát Bà kì thú",
-    date: "04 Tháng 07, 2025",
-    description: "Nhóm nghiên cứu lội bùn ven rừng ngập mặn Cát Bà dưới cái nắng hè đổ lửa để thu mẫu vi sinh vật phân hủy plastic tự nhiên. Lội bùn trơn trượt mỏi nhừ, nhưng bù lại là một thùng mẫu đầy hứa hẹn và bữa tối hải sản vỉa hè vui hết nấc cùng thầy cô.",
-    category: "Field Trip",
-    iconName: "Compass",
-    location: "Vườn quốc gia Cát Bà, Hải Phong"
+    title: "Góc bàn lập trình tại phòng lab HUST thân yêu",
+    date: "10 Tháng 11, 2023",
+    description: "Góc bàn ngập đầy tài liệu khí động học tua bin và chiếc máy tính trầy xước nơi mình đã gõ những dòng code dựng lưới đầu tiên cho đề tài dòng quạt hút phản lực nhiệt EDF hướng trục.",
+    category: "Academic",
+    iconName: "ThermometerCheck",
+    location: "Propulsion Systems Lab, HUST, Hanoi"
   },
   {
     id: "m3",
-    title: "Mưa rào Hà Nội bên góc bàn Cafe Tạ Quang Bửu",
-    date: "18 Tháng 09, 2025",
-    description: "Góc bàn nhỏ ấm cúng cạnh cửa sổ tầng 2 quán cafe ngay đối diện thư viện Tạ Quang Bửu của HUST. Nơi đây đã đồng hành cùng mình qua hàng trăm giờ ngồi đọc review paper, sửa code Python lỗi và nhâm nhi tách đen đá không đường đậm chất Bách Khoa.",
-    category: "Daily Life",
-    iconName: "Coffee",
-    location: "Tạ Quang Bửu Street, Hà Nội"
+    title: "Chuyến bay dài đến Đài Bắc khát vọng mới",
+    date: "15 Tháng 02, 2026",
+    description: "Hành lý xếp gọn gàng cùng ước mơ dấn thân sâu hơn vào nghiên cứu cơ chất, máy học ứng dụng tại Viện Cơ học Ứng dụng xuất sắc của Đại học Quốc gia Đài Loan (NTU). Bắt đầu hành trình đầy triển vọng mới.",
+    category: "Field Trip",
+    iconName: "Presentation",
+    location: "National Taiwan University, Taipei"
   },
   {
     id: "m4",
-    title: "Báo cáo tiến độ seminar đầu tiên trước hội đồng",
-    date: "05 Tháng 01, 2026",
-    description: "Lần đầu tiên trình bày nghiên cứu học máy ứng dụng dự đoán cấu trúc trước toàn thể giáo sư của viện. Chân run cầm cập khi trả lời các câu hỏi phản biện gắt gao, thế nhưng cái gật đầu mỉm cười tán thành cuối cùng của thầy trưởng bộ môn đã khiến mọi sự nỗ lực tan biến thành niềm vui tột độ.",
-    category: "Academic",
-    iconName: "Presentation",
-    location: "Hội trường C1-203, HUST"
+    title: "Thời gian làm việc lập trình tại Akselos HCM",
+    date: "25 Tháng 03, 2025",
+    description: "Những buổi làm việc nhiệt huyết cùng các đàn anh xuất sắc tại Akselos Sài Gòn, cùng phân tích các thuật toán GPR học máy hiện đại hỗ trợ mô phỏng thời gian thực cho hệ thống lò phản ứng hóa học công nghiệp phức tạp.",
+    category: "Daily Life",
+    iconName: "Coffee",
+    location: "Akselos Office, Quận 1, Ho Chi Minh City"
   }
 ];
 
 export const blogPosts: BlogPost[] = [
   {
     id: "blog1",
-    title: "Hành Trình Từ Kỹ Sư Công Nghệ Sinh Học HUST Đến Thạc Sĩ: Chặng Đường Vượt Khỏi Vùng An Toàn Đời Thường",
-    date: "14 Tháng 03, 2026",
+    title: "Từ Kỹ Sư Hàng Không HUST Đến Trải Nghiệm Học Thạc Sĩ KAIST & NTU: Học Cách Chấp Nhận Sự Khác Biệt",
+    date: "12 Tháng 04, 2026",
     category: "Reflection",
-    readTime: "7 phút đọc",
-    summary: "Chia sẻ chân thành về sự chuyển dịch tư duy từ một cậu sinh viên chỉ quen làm theo các quy trình định sẵn (recipe) sang một thạc sĩ nghiên cứu độc lập phải tự thiết kế thử nghiệm và đối mặt với 90% kết quả thất bại.",
+    readTime: "8 phút đọc",
+    summary: "Những chia sẻ chân thật và mộc mạc về hành trình vượt biên học hỏi tại hai nền giáo dục hàng đầu Châu Á, cách xử lý áp lực khi phải thích ứng nhanh với khối lượng bài tập khổng lồ và các hướng đi cơ học thực tế.",
     content: [
-      "Bước chân vào bậc cao học tại Đại học Bách khoa Hà Nội (HUST), mình từng nghĩ học thạc sĩ chỉ đơn giản là đi học thêm vài môn cơ sở chuyên ngành nâng cao và tiếp tục chạy điện di hay nuôi cấy tế bào như thời đại học. Nhưng thực tế đã tặng mình một 'cú tát giải ngố' ngay học kỳ đầu tiên.",
-      "Ở bậc đại học, các bài thực hành đã có sẵn quy trình (protocol). Bạn chỉ cần cân đúng gram hóa chất, nhỏ đúng microliter dung dịch, bấm nút máy dòng điện di và chờ đợi kết quả đã biết trước. Nhưng ở bậc thạc sĩ, bạn là người đi mở đường mới. Bạn sẽ nghiên cứu dòng enzyme chưa ai từng tối ưu, chạy thử nghiệm trên dữ liệu thô chưa lọc sạch.",
-      "Nhiều tuần liền, gel điện di của mình trắng trơn không một vạch sáng, khuẩn lạc không mọc, hoặc tệ hơn là chủng vi sinh chết sạch sau một đêm mất điện phòng Lab. Đó là lúc sự nghi ngờ bản thân trỗi dậy. Mình có thực sự phù hợp làm nghiên cứu khoa học? Hay mình chỉ đang lãng phí thời gian?",
-      "Nhờ sự động viên từ Thầy hướng dẫn và các bạn cùng Lab, mình nhận ra: Thất bại trong phòng thí nghiệm không chứng minh bạn kém cỏi, nó chỉ đang chỉ ra một hướng đi không hiệu quả. Khoa học tiến lên nhờ loại trừ những giả thuyết sai. Khi bạn chấp nhận làm bạn với thất bại, bình tĩnh phân tích nguyên nhân từ độ pH của đệm đến nhiệt độ biến tính DNA, bạn mới thực sự trưởng thành và xứng đáng mang danh xưng 'scientist'."
+      "Bước chân vào thế giới của KAIST hay sau này là cơ duyên tại NTU Đài Loan, mình phát hiện ra một nhịp độ học thuật cực kỳ áp lực nhưng cũng chứa đầy thăng tiến vượt bậc. Nếu ở Việt Nam, chúng ta hay giải bài tập dựa trên các giáo trình có sẵn, thì môi trường quốc tế yêu cầu bạn tự đặt giả thuyết, tự định chuẩn (benchmark) và lý giải xác đáng bằng toán học.",
+      "Sự tích lũy từ những ngày thức trắng giải mã dòng chảy xoay tua-bin tại Propulsion Systems Lab ở HUST đã nâng bước cho mình rất nhiều. Chân thành khuyên các bạn trẻ: Đừng ngại dấn thân khỏi vùng an toàn để hiểu thế giới học thuật đỉnh cao thực sự vận hành ra sao."
     ],
-    tags: ["Cao Học HUST", "Đời Lab", "Kinh Nghiệm", "Tư Duy Nghiên Cứu"]
+    tags: ["Hành Trình Thạc Sĩ", "Hàng Không Vũ Trụ", "KAIST", "NTU", "HUST"]
   },
   {
     id: "blog2",
-    title: "Tại Sao Mình Lựa Chọn Sinh Học Tính Toán (Computational Biology) Giữa Thời Đại Trí Tuệ Nhân Tạo?",
-    date: "28 Tháng 04, 2026",
+    title: "Gaussian Process Regression (GPR) Trong Mô Phỏng Cơ Học Thời Gian Thực",
+    date: "22 Tháng 05, 2026",
     category: "Academic",
-    readTime: "5 phút đọc",
-    summary: "Tại sao một người học Công nghệ sinh học truyền thống lại quyết định dành hàng giờ để gõ những dòng lệnh Linux, code Python thay vì chỉ tập trung thao tác trong tủ cấy? Sức mạnh kỳ diệu khi kết hợp giữa Wet Lab và Dry Lab.",
-    content: [
-      "Sinh học hiện đại đang đối mặt với một cơn sóng dữ liệu khổng lồ. Một thí nghiệm giải trình tự gen thế hệ mới (NGS) có thể sinh ra hàng chục Gigabyte dữ liệu thô dạng văn bản chỉ trong vài giờ. Làm cách nào để một con người có thể đọc hết và tìm ra gien đột biến quý giá trong mớ hỗn độn 3 tỷ cặp base di truyền đó?",
-      "Đó chính là lý do Sinh học tính toán (Computational Biology / Bioinformatics) ra đời. Đây là sợi dây xích kết nối giữa thế giới số học máy tính và thế giới sinh học bí ẩn.",
-      "Đối với mình, sinh viên tốt nghiệp ngành Công nghệ sinh học truyền thống ban đầu cảm thấy lập trình như một 'ngôn ngữ ngoài hành tinh'. Chạy lệnh Linux bị lỗi syntax liên tục, dùng Python vẽ đồ thị boxplot méo mó. Tuy nhiên, khi mình vượt qua rào cản kỹ thuật cơ bản, mình phát hiện ra một siêu năng lực mới.",
-      "Thay vì bỏ ra 6 tháng trời thử nghiệm mù quáng hàng trăm tổ hợp đột biến điểm của enzyme trong phòng Wet Lab tốn kém hàng chục triệu tiền hóa chất mua từ nước ngoài, mình chỉ mất 2 tiếng viết đoạn script tìm kiếm liên kết hydro động lực học phân tử trên máy tính để thu hẹp danh sách ứng viên từ 100 xuống 3 gien khả thi nhất. Sau đó, đem 3 gien này vào thực nghiệm kiểm chứng. Đó chính là sự kết hợp tối thượng giữa Wet Lab và Dry Lab - thông minh hơn, nhanh hơn và tiết kiệm nguồn lực khoa học nước nhà."
-    ],
-    tags: ["Bioinformatics", "Python", "Wet Lab Dry Lab", "AI & Science"]
-  },
-  {
-    id: "blog3",
-    title: "Sổ Tay Sống Sót Dành Cho Học Viên Cao Học: 5 Thói Quen Nhỏ Để Giữ Sự Tỉnh Táo Và Chống Burnout",
-    date: "09 Tháng 05, 2026",
-    category: "Survival Guide",
     readTime: "6 phút đọc",
-    summary: "Học thạc sĩ không phải cuộc đua nước rút 100m, nó là một cuộc chạy Marathon bền bỉ. Tổng hợp 5 kinh nghiệm thực tế giúp mình vừa cân bằng được tiến độ báo cáo bài báo vừa giữ được tinh thần thoải mái, không kiệt sức.",
+    summary: "Tại sao Machine Learning không chỉ đơn thuần là nhận diện ảnh mèo chó? Tìm hiểu ứng dụng ưu việt của GPR trong việc xây dựng mô hình thay thế (surrogate models) cho cấu kiện cơ nhiệt phức tạp.",
     content: [
-      "Áp lực của một thạc sĩ rất đặc thù: Bạn phải vừa hoàn thành đủ tín chỉ các môn học trên lớp, vừa phải trực tiếp tham gia hỗ trợ các đề tài nghiên cứu cấp Bộ của thầy cô, lại vừa phải lo viết bài báo khoa học cho riêng mình để đủ điều kiện bảo vệ tốt nghiệp. Rất nhiều bạn bè của mình đã rơi vào trạng thái kiệt quệ tinh thần (burnout) trầm trọng.",
-      "Dưới đây là 5 thói quen nhỏ mình đã đúc kết và áp dụng để giữ cho bản thân luôn tràn đầy năng lượng tích cực:",
-      "1. Tập ghi chép Lab Journal (Sổ ký sự phòng Lab) cực kỳ chi tiết: Không chỉ ghi thông số thành công, hãy viết lại cả những lỗi bạn đã mắc phải trong ngày. Việc rạch ròi nhật ký giúp ngày hôm sau bạn không tốn thời gian lặp lại vết xe đổ.",
-      "2. Quy tắc 'Rời Lab là cởi áo Blouse': Đừng mang áp lực tế bào nhiễm nấm hay mô hình lỗi về nhà. Hãy dành buổi tối để tập thể thao tại nhà thi đấu Bách Khoa hoặc đi chơi với người thân nhằm làm mới bộ não.",
-      "3. Kết nối sâu sắc với Labmates (Bạn đồng hành phòng thí nghiệm): Phòng lab không chỉ là nơi chia sẻ hóa chất, đó còn là nơi tuyệt vời nhất để bạn xả stress. Những bữa trà đá vỉa hè cổng trường bàn luận về khoa học lẫn chuyện gia đình giúp xua tan áp bách vô cùng hiệu quả.",
-      "4. Chấp nhận rằng dữ liệu xấu là một phần của cuộc sống học thuật: Đôi khi biểu đồ lệch, kết quả ngược kỳ vọng. Hãy coi nó là một bí ẩn thú vị cần điều tra tiếp chứ đừng coi nó là lỗi của bản thân.",
-      "5. Học cách nói 'Không' có chọn lọc: Sức lực của bạn có hạn. Tránh nhận quá nhiều việc phụ trợ không liên quan đến hướng nghiên cứu luận văn chính của bạn kẻo 'xôi hỏng bỏng không'."
+      "Trong công nghiệp nặng, mô phỏng phản ứng truyền nhiệt hay sức bền kết cấu bằng phương pháp phần tử hữu hạn (FEA) truyền thống tốn hàng giờ đến hàng ngày để cho ra đáp án. Để theo dõi thời gian thực phục vụ bảo trì dự báo trước, chúng ta cần các giải pháp phản hồi trong vòng tích tắc.",
+      "Gaussian Process Regression (GPR) nổi lên như một vị cứu tinh nhờ cung cấp dự báo chính xác kèm thông số đánh giá độ bất định (uncertainty quantification) tin cậy khoa học, giúp nâng tầm chuyển đổi số công nghiệp lên nấc thang mới."
     ],
-    tags: ["Mental Health", "Sổ Tay Thạc Sĩ", "Kinh Nghiệm Sống", "HUST Life"]
+    tags: ["Machine Learning", "Gaussian Process", "Akselos", "Numerical Analysis"]
   }
 ];
 
@@ -257,8 +261,8 @@ export const educationHistory: EducationItem[] = [
     degree: "Aerospace Engineering (MSc - Discontinued)",
     institution: "KAIST (Korea Advanced Institute of Science and Technology)",
     department: "Department of Aerospace Engineering",
-    period: "2024 - 2025",
-    details: "Thesis topic: Turbulence modeling, high-fidelity advective schemes in Actuator Line Methods for Helicopter flow.",
+    period: "Feb 2024 – Oct 2024",
+    details: "Thesis topic: Turbulence modeling, high-fidelity advective schemes in Actuator Line Methods for Helicopter flow. GPA: 3.58/4.3 (first semester).",
     isCurrent: false,
     type: "discontinued"
   },
@@ -266,9 +270,78 @@ export const educationHistory: EducationItem[] = [
     degree: "Aerospace Engineering (BC)",
     institution: "Hanoi University of Science and Technology (HUST)",
     department: "School of Transportation Engineering",
-    period: "2019 - 2023",
-    details: "Focus: Aerodynamics, Computational Fluid Dynamics (CFD), Structural Mechanics.",
+    period: "Aug 2019 - Aug 2023",
+    details: "Thesis topic: 'Numerical investigation of an Electric Motor Cooling ability through the Centre Body of an Electric Ducted Fan' (Grade: 9.45/10). Ranked 1st in class, GPA: 3.53/4.",
     isCurrent: false,
     type: "completed"
+  }
+];
+
+export const workExperiences: ExperienceItem[] = [
+  {
+    role: "Junior Developer Engineer",
+    organization: "AKSELOS",
+    location: "Ho Chi Minh City, Vietnam",
+    period: "Dec 2024 – Present",
+    tasks: [
+      "Nghiên cứu cơ sở toán học của các thuật toán tối ưu hóa và học máy (Gaussian Process Regression (GPR), Bayesian, thuật toán di truyền và gradient-free).",
+      "Xây dựng công cụ và phát triển mã nguồn tính toán số phân tích cơ chất nhiệt động học.",
+      "Dự án giám sát thời gian thực hệ thống SMR (Steam Methane Reforming): Lập trình bộ tính toán đặc tính nhiệt động lực học hỗn hơp khí và phân tích truyền nhiệt bức xạ."
+    ],
+    projects: [
+      {
+        name: "Real-Time SMR System Monitoring",
+        description: "Applying machine learning-based (GPR) and optimization-based model for parameters optimization of kinetic reaction model."
+      },
+      {
+        name: "Personal Mesh Solver Project",
+        description: "Developed 2D unstructured mesh FVM solver for incompressible flow (SIMPLE) and compressible flow (Riemann solver – ROE, AUSM)."
+      }
+    ]
+  },
+  {
+    role: "Graduate Researcher",
+    organization: "KAIST (Aerial Innovative Mobility Lab)",
+    location: "Daejeon, South Korea",
+    period: "Feb 2024 – Sep 2024",
+    advisor: "Assoc. Prof. Sang-Bong LEE",
+    tasks: [
+      "Khảo sát nâng cao các bộ giải Riemann (Riemann solvers) và mô hình hóa dòng hỗn loạn nhiễu cho phương pháp thể tích hữu hạn (FVM).",
+      "Nghiên cứu lập trình tính toán hiệu năng cao song song hóa thuật toán số bằng OpenMPI trên mạng lưới trực giao.",
+      "Tham gia trực tiếp dự án mô phỏng số khí động cánh quạt trực thăng (Helicopter Flow Simulation), tinh chỉnh bộ hạn chế độ dốc Van Albada chống dao động áp suất giả mạo."
+    ]
+  },
+  {
+    role: "Student Lab Leader",
+    organization: "HUST (Propulsion Systems Lab)",
+    location: "Hanoi, Vietnam",
+    period: "Sep 2022 – Dec 2023",
+    advisor: "Ph. D Cong-Truong DINH",
+    tasks: [
+      "Tổ chức nhóm sinh viên thực hiện đề tài phân tích mô phỏng động dòng khí nén xoáy tua-bin máy nén.",
+      "Thiết kế CAD, dựng lưới hình học phức tạp phục vụ trực tiếp bài toán tính toán cơ chất dòng động cơ phản lực.",
+      "Dự án tối ưu hóa hiệu quả khí động tản nhiệt bầu hút gió cho EDF và tối ưu hệ số khí động cánh tên lửa tự dẫn."
+    ]
+  },
+  {
+    role: "Undergraduate Researcher",
+    organization: "HUST (Computational Engineering Group)",
+    location: "Hanoi, Vietnam",
+    period: "June 2021 – Sep 2022",
+    advisor: "Assoc. Prof. Van-Sang PHAM",
+    tasks: [
+      "Mô phỏng đa vật lý (multi-physics) biểu diễn ứng xử cơ nhiệt của vật liệu cấu kiện đàn hồi.",
+      "Dự án 'Thiết kế & Chế tạo đầu dò siêu âm dưới nước (UUT)': Dựng mô hình liên hợp áp điện (piezoelectric model) và chạy mô phỏng FEM phân tích dao động, âm học."
+    ]
+  },
+  {
+    role: "Academic Teaching Assistant & Buddy Student",
+    organization: "HUST",
+    location: "Hanoi, Vietnam",
+    period: "Sep 2022 – Apr 2023",
+    tasks: [
+      "Hỗ trợ giảng dạy, biên dịch tài liệu học tập giáo trình môn 'Chân vịt dòng khí cánh quạt (Aircraft propeller)' cho sinh viên chuyên ngành.",
+      "Làm sinh viên Buddy trực tiếp hỗ trợ kỹ thuật cho một sinh viên trao đổi từ Đại học Niigata (Nhật Bản) hoàn thành khóa luận tốt nghiệp về thiết kế eVTOL khí động dọc."
+    ]
   }
 ];
