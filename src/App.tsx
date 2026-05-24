@@ -53,6 +53,64 @@ export default function App() {
     }
   ];
 
+  const categoryBanners: Record<string, {
+    title: string;
+    subtitle: string;
+    description: string;
+    image: string;
+    vibe: string;
+  }> = {
+    "education": {
+      title: "Học Vấn & Quá Trình Đào Tạo",
+      subtitle: "Academic Journey & Background",
+      description: "Hành trình đèn sách tích lũy tri thức, nghiên cứu cơ chất cơ học và khoa học ứng dụng chính quy.",
+      image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1200&auto=format&fit=crop",
+      vibe: "Nghiêm Túc & Hàn Lâm 🎓"
+    },
+    "research-interests": {
+      title: "Lĩnh Vực Nghiên Cứu Chuyên Sâu",
+      subtitle: "Primary Scientific Pursuits",
+      description: "Tìm tòi thế giới vật lý thông qua các mô hình toán học giải giải tích, CFD phức tạp và cơ học lý thuyết.",
+      image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=1200&auto=format&fit=crop",
+      vibe: "Sâu Sắc & Logic 🧬"
+    },
+    "publications": {
+      title: "Mốc Thống Kê & Thành Tựu Đạt Được",
+      subtitle: "Scholarly Milestones & Achievements",
+      description: "Tổng hợp công trình xuất sắc, đề tài, tài liệu cùng các nghiên cứu hàn lâm có sức nặng.",
+      image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1200&auto=format&fit=crop",
+      vibe: "Khắt Khe & Đầy Giá Trị 📜"
+    },
+    "philosophy": {
+      title: "Tư Duy, Chiêm Nghiệm & Góc Nhìn Sống",
+      subtitle: "Personal Perspectives & Lifespan",
+      description: "Chia sẻ hệ giá trị nhân sinh quan, tư tưởng sống tử tế và những suy ngẫm sâu sắc về cuộc đời.",
+      image: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=1200&auto=format&fit=crop",
+      vibe: "Suy Tư & Điềm Tĩnh 🧘‍♂️"
+    },
+    "lab-simulator": {
+      title: "Phòng Thực Nghiệm Khoa Học Vui",
+      subtitle: "Interactive Engineering Laboratory",
+      description: "Bộ giả lập mô phỏng động, giúp hình ảnh hóa các định lý phân tích kết cấu và dòng chảy cơ học.",
+      image: "https://images.unsplash.com/photo-1617791160536-598cf32026fb?q=80&w=1200&auto=format&fit=crop",
+      vibe: "Đầy Đam Mê & Nerd ⚡"
+    },
+    "memories": {
+      title: "Ký Ức Đời Thường & Trải Nghiệm Cá Nhân",
+      subtitle: "Cozy Log & Daily Adventures",
+      description: "Góc giản dị chứa đựng niềm vui đời thường: Trà, bánh, game và những phút giây ấm áp vui vẻ.",
+      image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=1200&auto=format&fit=crop",
+      vibe: "Ấm Áp & Dễ Thương 🐾☕"
+    },
+    "blog": {
+      title: "Tạp Bút, Nhật Ký Học Thuật & Đời Sống",
+      subtitle: "Scholarly & Experiential Blog posts",
+      description: "Nơi tự sự về những câu chuyện cuộc sống, hành trình làm thạc sĩ đầy thử thách và bài học thực tiễn.",
+      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1200&auto=format&fit=crop",
+      vibe: "Phản Chiếu & Tự Sự ✍️"
+    }
+  };
+
   const handleNavClick = (id: string) => {
     setActiveNav(id);
     setIsMobileMenuOpen(false);
@@ -80,29 +138,38 @@ export default function App() {
     }
   };
 
+  const activeBanner = categoryBanners[activeNav] || categoryBanners["education"];
+
   return (
     <div className="min-h-screen bg-[#f8f9fa] text-[#2d3436] font-sans antialiased selection:bg-blue-100 selection:text-blue-900 flex flex-col md:flex-row pb-0">
       
-      {/* 1. DESKTOP PERMANENT SIDEBAR */}
-      <aside className="hidden md:flex flex-col w-64 lg:w-72 xl:w-80 fixed inset-y-0 left-0 bg-white border-r border-[#e9ecef] shadow-xs z-30">
-        {/* Sidebar Header / Branding */}
-        <div className="p-6 border-b border-[#e9ecef] flex flex-col gap-3">
-          <div className="flex items-center gap-2.5">
-            <div className="p-1.5 bg-blue-50 border border-blue-100 rounded-lg text-blue-600">
-              <Hexagon className="w-5 h-5" />
+      {/* 1. DESKTOP PERMANENT DARK MODERN SIDEBAR */}
+      <aside className="hidden md:flex flex-col w-64 lg:w-72 xl:w-80 fixed inset-y-0 left-0 bg-[#070b13] text-slate-300 border-r border-[#162131] shadow-xl z-30">
+        
+        {/* Sidebar Header / Branding with Glowing Avatar */}
+        <div className="p-6 border-b border-[#162131] flex flex-col gap-4">
+          <div className="flex items-center gap-3">
+            <div className="relative group flex-shrink-0">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full blur-xs opacity-70 group-hover:opacity-100 transition duration-300 animate-pulse" />
+              <img 
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=128&h=128" 
+                alt="Van-Son Dinh" 
+                className="relative w-12 h-12 rounded-full object-cover border-2 border-slate-900 shadow-md"
+                referrerPolicy="no-referrer"
+              />
             </div>
             <div>
-              <span className="font-display font-black text-slate-900 text-sm md:text-base tracking-tight block leading-tight">
+              <span className="font-display font-extrabold text-white text-sm md:text-base tracking-tight block leading-tight">
                 Van-Son Dinh
               </span>
-              <span className="text-[10px] text-blue-600 font-mono block leading-none mt-0.5 font-bold">
+              <span className="text-[10px] text-blue-400 font-mono block leading-none mt-1 font-bold">
                 MSc CANDIDATE
               </span>
             </div>
           </div>
 
-          <div className="flex items-center justify-between border-t border-slate-100/80 pt-2.5">
-            <span className="inline-flex items-center gap-1 bg-blue-50 text-blue-600 text-[9px] font-mono px-2.5 py-0.5 rounded-full border border-blue-100 font-bold">
+          <div className="flex items-center justify-between border-t border-slate-800/60 pt-3">
+            <span className="inline-flex items-center gap-1 bg-slate-900 text-blue-400 text-[9px] font-mono px-2.5 py-0.5 rounded-full border border-[#162131] font-bold">
               MSc of Engineering '26
             </span>
           </div>
@@ -112,7 +179,7 @@ export default function App() {
         <div className="flex-1 overflow-y-auto px-4 py-6 space-y-8">
           {menuCategories.map((cat, i) => (
             <div key={i} className="space-y-2">
-              <h4 className="px-3 text-[10px] uppercase font-bold text-slate-400 font-mono tracking-wider">
+              <h4 className="px-3 text-[10px] uppercase font-bold text-slate-500 font-mono tracking-wider">
                 {cat.title}
               </h4>
               <nav className="space-y-1">
@@ -126,15 +193,15 @@ export default function App() {
                       onClick={() => handleNavClick(item.id)}
                       className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-mono transition-all group ${
                         isActive
-                          ? "bg-slate-900 text-white font-semibold shadow-xs"
-                          : "text-slate-500 hover:text-slate-950 hover:bg-slate-50/80"
+                          ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-md shadow-blue-950/40 border border-blue-500/20"
+                          : "text-slate-400 hover:text-white hover:bg-slate-900/60"
                       }`}
                     >
                       <span className="flex items-center gap-2.5">
-                        <Icon className={`w-4 h-4 transition-transform group-hover:scale-105 ${isActive ? "text-blue-400" : "text-slate-400 group-hover:text-slate-650"}`} />
+                        <Icon className={`w-4 h-4 transition-transform group-hover:scale-105 ${isActive ? "text-white" : "text-slate-500 group-hover:text-slate-300"}`} />
                         <span>{item.label}</span>
                       </span>
-                      {isActive && <ChevronRight className="w-3.5 h-3.5 text-blue-400 hidden xl:block" />}
+                      {isActive && <ChevronRight className="w-3.5 h-3.5 text-white/90 hidden xl:block" />}
                     </button>
                   );
                 })}
@@ -144,29 +211,32 @@ export default function App() {
         </div>
 
         {/* Sidebar Sticky Footer */}
-        <div className="p-4 border-t border-[#e9ecef] bg-slate-50/50 space-y-2.5">
-          <div className="flex flex-col gap-1.5 text-[10px] font-mono text-slate-500">
+        <div className="p-4 border-t border-[#162131] bg-[#04060b] space-y-2.5">
+          <div className="flex flex-col gap-1.5 text-[10px] font-mono text-slate-400">
             <div className="flex items-center gap-1.5">
-              <Mail className="w-3 h-3 text-slate-400" />
-              <a href={`mailto:${profileData.email}`} className="hover:text-blue-600 truncate">{profileData.email}</a>
+              <Mail className="w-3 h-3 text-slate-500" />
+              <a href={`mailto:${profileData.email}`} className="hover:text-blue-400 truncate text-slate-300 transition-colors">{profileData.email}</a>
             </div>
             <div className="flex items-center gap-1.5">
-              <MapPin className="w-3 h-3 text-slate-400 flex-shrink-0" />
-              <span>{profileData.location}</span>
+              <MapPin className="w-3 h-3 text-slate-500 flex-shrink-0" />
+              <span className="text-slate-300 truncate">{profileData.location}</span>
             </div>
           </div>
         </div>
       </aside>
 
-      {/* 2. MOBILE TOP BANNER HEADER */}
-      <header className="md:hidden sticky top-0 z-40 bg-white border-b border-[#e9ecef] h-16 px-4 flex items-center justify-between">
+      {/* 2. MOBILE TOP BLACK MODERN HEADER */}
+      <header className="md:hidden sticky top-0 z-40 bg-[#070b13] border-b border-[#162131] h-16 px-4 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
-          <div className="p-1.5 bg-blue-50 border border-blue-100 rounded-lg text-blue-600">
-            <Hexagon className="w-4.5 h-4.5" />
-          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=128&h=128" 
+            alt="Van-Son Dinh"
+            className="w-8 h-8 rounded-full object-cover border border-blue-500/40"
+            referrerPolicy="no-referrer"
+          />
           <div>
-            <span className="font-display font-medium text-slate-900 text-sm tracking-tight block">
-              Van-Son Dinh <span className="text-blue-650 font-mono text-[9px] font-bold">/ Candidates</span>
+            <span className="font-display font-bold text-white text-sm tracking-tight block">
+              Van-Son Dinh
             </span>
           </div>
         </div>
@@ -174,7 +244,7 @@ export default function App() {
         <button 
           id="btn-mobile-menu-toggle"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="p-2 border border-slate-200 rounded-lg bg-slate-50 text-slate-600 hover:text-[#2d3436] transition-colors"
+          className="p-2 border border-slate-800 rounded-lg bg-slate-900 text-slate-300 hover:text-white transition-colors"
         >
           {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -183,25 +253,30 @@ export default function App() {
       {/* 3. MOBILE SYSTEM SLIDEOUT DRAWER */}
       {isMobileMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black/40 z-40 md:hidden animate-fade-in" 
+          className="fixed inset-0 bg-black/60 z-40 md:hidden animate-fade-in" 
           onClick={() => setIsMobileMenuOpen(false)} 
         />
       )}
 
-      <div className={`fixed inset-y-0 left-0 w-64 bg-white z-50 border-r border-[#e9ecef] p-5 flex flex-col justify-between transform transition-transform duration-300 md:hidden ${
+      <div className={`fixed inset-y-0 left-0 w-64 bg-[#070b13] z-50 border-r border-[#162131] p-5 flex flex-col justify-between transform transition-transform duration-300 md:hidden ${
         isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
       }`}>
         <div className="space-y-6 flex-1">
-          {/* Brand block */}
-          <div className="flex items-center justify-between border-b border-slate-100 pb-4">
-            <div className="flex items-center gap-2">
-              <Hexagon className="w-5 h-5 text-blue-600" />
-              <span className="font-display font-bold text-slate-900 text-sm">Van-Son Dinh</span>
+          {/* Brand block slideout */}
+          <div className="flex items-center justify-between border-b border-[#162131] pb-4">
+            <div className="flex items-center gap-2.5">
+              <img 
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=128&h=128" 
+                alt="Van-Son Dinh"
+                className="w-8 h-8 rounded-full object-cover border border-blue-500/40"
+                referrerPolicy="no-referrer"
+              />
+              <span className="font-display font-bold text-white text-sm">Van-Son Dinh</span>
             </div>
             <button 
               id="btn-close-mobile-drawer"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="p-1.5 rounded-lg border border-slate-150 hover:bg-slate-50"
+              className="p-1.5 rounded-lg border border-slate-800 text-slate-400 hover:bg-slate-900"
             >
               <X className="w-4 h-4" />
             </button>
@@ -211,7 +286,7 @@ export default function App() {
           <div className="space-y-6">
             {menuCategories.map((cat, i) => (
               <div key={i} className="space-y-2">
-                <h4 className="text-[10px] uppercase font-bold text-slate-400 font-mono tracking-wider">
+                <h4 className="text-[10px] uppercase font-bold text-slate-500 font-mono tracking-wider">
                   {cat.title}
                 </h4>
                 <nav className="space-y-1">
@@ -225,8 +300,8 @@ export default function App() {
                         onClick={() => handleNavClick(item.id)}
                         className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-mono transition-all ${
                           isActive
-                            ? "bg-slate-900 text-white font-semibold"
-                            : "text-slate-500 hover:text-slate-950 hover:bg-slate-50"
+                            ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold"
+                            : "text-slate-400 hover:text-white hover:bg-slate-900"
                         }`}
                       >
                         <Icon className="w-4 h-4" />
@@ -241,14 +316,49 @@ export default function App() {
         </div>
 
         {/* Footer info mobile */}
-        <div className="border-t border-slate-100 pt-4 flex flex-col gap-1 text-[10px] font-mono text-slate-400">
-          <div>sondv.hust@gmail.com</div>
-          <div>Hanoi, Vietnam</div>
+        <div className="border-t border-[#162131] pt-4 flex flex-col gap-1 text-[10px] font-mono text-slate-400">
+          <div>{profileData.email}</div>
+          <div>{profileData.location}</div>
         </div>
       </div>
 
-      {/* 4. MAIN CONTENT AREA (Offset by sidebar width on desktop) */}
+      {/* 4. MAIN CONTENT AREA with Dynamic Hero Cover Banner */}
       <div className="flex-1 md:pl-64 lg:pl-72 xl:pl-80 flex flex-col min-h-screen">
+        
+        {/* Cover Banner Area */}
+        <div className="relative h-56 md:h-72 w-full overflow-hidden bg-slate-950 flex items-center justify-center">
+          {/* Banner cover background */}
+          <img 
+            src={activeBanner.image} 
+            alt={activeBanner.title} 
+            className="absolute inset-0 w-full h-full object-cover opacity-35 mix-blend-overlay transition-transform duration-700 hover:scale-105"
+            referrerPolicy="no-referrer"
+          />
+          
+          {/* Rich overlay filters for text safety */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-black/30" />
+          
+          {/* Banner Overlaid Text */}
+          <div className="relative z-10 text-center px-6 max-w-4xl py-6 flex flex-col items-center">
+            <span className="inline-block text-[9px] md:text-10px font-mono font-extrabold tracking-widest text-[#60a5fa] uppercase bg-slate-900/80 backdrop-blur-xs px-3 py-1 rounded-full border border-white/10 [text-shadow:0_1px_2px_rgba(0,0,0,0.8)]">
+              {activeBanner.subtitle}
+            </span>
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-display font-extrabold text-white mt-3.5 tracking-tight [text-shadow:0_2px_4px_rgba(0,0,0,0.85)] max-w-2xl select-none leading-tight">
+              {activeBanner.title}
+            </h1>
+            <p className="text-slate-300 text-xs md:text-sm mt-3 font-medium max-w-xl mx-auto opacity-95 [text-shadow:0_1px_2px_rgba(0,0,0,0.8)] leading-relaxed">
+              {activeBanner.description}
+            </p>
+          </div>
+
+          {/* Vibe Status Indicator Badge */}
+          <div className="absolute bottom-4 right-4 md:bottom-6 md:right-8 bg-slate-950/80 backdrop-blur-md text-[9px] md:text-[11px] font-mono text-white border border-slate-800 px-3 py-1.5 rounded-full flex items-center gap-2 select-none shadow-lg tracking-wide">
+            <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            Vibe: <span className="font-bold text-blue-300 uppercase">{activeBanner.vibe}</span>
+          </div>
+        </div>
+
+        {/* Content Section Padding */}
         <main className="flex-1 max-w-5xl w-full mx-auto px-6 md:px-8 lg:px-12 py-8 space-y-10">
           {renderActiveComponent()}
         </main>

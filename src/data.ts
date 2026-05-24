@@ -266,7 +266,7 @@ export const educationHistory: EducationItem[] = [
     degree: "Aerospace Engineering (BC)",
     institution: "Hanoi University of Science and Technology (HUST)",
     department: "School of Transportation Engineering",
-    period: "2020 - 2024",
+    period: "2019 - 2023",
     details: "Focus: Aerodynamics, Computational Fluid Dynamics (CFD), Structural Mechanics.",
     isCurrent: false,
     type: "completed"
