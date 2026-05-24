@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Plane } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { 
   Building2, 
@@ -70,11 +71,11 @@ export default function Education() {
 
             <div>
               <h4 className="font-display font-extrabold text-slate-800 text-sm md:text-base leading-snug">
-                add my avatar here
+                Van-Son Dinh
               </h4>
               <p className="text-[11px] font-mono text-slate-500 mt-1 flex items-center gap-1">
-                <Sparkles className="w-3.5 h-3.5 text-blue-500 animate-spin" style={{ animationDuration: '6s' }} />
-                Click layout to customize
+                <Plane  className="w-3.5 h-3.5 text-blue-500 animate-spin"  style={{ animationDuration: '6s' }} />
+                MSc Student in Applied Mechanics
               </p>
             </div>
           </div>
