@@ -54,7 +54,6 @@ export default function Education() {
         {/* ================= LEFT SIDE COLUMN ================= */}
         <div className="lg:col-span- così lg:col-span-5 space-y-6">
           
-          {/* Mockup 1: "add my avatar here" Box */}
           <div className="bg-white rounded-2xl border border-slate-200/80 p-5 shadow-xs flex items-center gap-5 hover:border-blue-200 transition-colors duration-300 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50/40 rounded-full blur-2xl -mr-6 -mt-6 group-hover:bg-blue-100/40 transition-colors" />
             
@@ -74,7 +73,7 @@ export default function Education() {
                 Van-Son Dinh
               </h4>
               <p className="text-[11px] font-mono text-slate-500 mt-1 flex items-center gap-1">
-                <Plane  className="w-3.5 h-3.5 text-blue-500 animate-spin"  style={{ animationDuration: '6s' }} />
+                <Plane className="w-3.5 h-3.5 text-blue-500" />
                 MSc Student in Applied Mechanics
               </p>
             </div>
@@ -84,9 +83,6 @@ export default function Education() {
           <div className="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-xs space-y-4 hover:border-slate-300/80 transition-colors duration-300">
             <div className="space-y-3">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-blue-50 text-blue-700 border border-blue-100">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
-                MSc CANDIDATE • 2026-2028
-              </span>
               <h4 className="text-xl font-display font-bold text-slate-950 tracking-tight">{profileData.name}</h4>
               <p className="text-xs text-slate-500 leading-relaxed font-mono">{profileData.title} (Aerospaces)</p>
             </div>
