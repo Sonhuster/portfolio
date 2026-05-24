@@ -253,7 +253,7 @@ export const educationHistory: EducationItem[] = [
     institution: "National Taiwan University (NTU)",
     department: "Institute of Applied Mechanics",
     period: "2026 - Now (Expected 2028)",
-    details: "Thesis topic: LES + Particle Solver + Machine Learning.",
+    details: ["Thesis topic: LES + Particle Solver + Machine Learning."],
     isCurrent: true,
     type: "current"
   },
