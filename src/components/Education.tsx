@@ -74,7 +74,7 @@ export default function Education() {
                 Van-Son Dinh
               </h4>
               <p className="text-[11px] font-mono text-slate-500 mt-1 flex items-center gap-1">
-                <Plane  className="w-3.5 h-3.5 text-blue-500 animate-spin"  style={{ animationDuration: '6s' }} />
+                <Plane  className="w-3.5 h-3.5 text-blue-500" />
                 MSc Student in Applied Mechanics
               </p>
             </div>
