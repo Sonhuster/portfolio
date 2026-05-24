@@ -246,7 +246,7 @@ export default function AcademicBlog() {
                 </h2>
                 
                 <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs font-mono text-slate-400 pt-2 border-y border-slate-50 py-2.5">
-                  <span className="flex items-center gap-1 text-slate-500"><User className="w-3.5 h-3.5" /> Bởi Sơn Đỗ Viết</span>
+                  <span className="flex items-center gap-1 text-slate-500"><User className="w-3.5 h-3.5" /> Bởi Van-Son Dinh</span>
                   <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> Thời gian đọc: {selectedPost.readTime}</span>
                   <span className="flex items-center gap-1"><MessageSquare className="w-3.5 h-3.5" /> {getPostCommentsCount(selectedPost.id)} Thảo luận</span>
                 </div>

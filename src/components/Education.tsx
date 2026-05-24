@@ -66,7 +66,7 @@ export default function Education() {
               <div className="flex items-start gap-2.5">
                 <Building2 className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-[9px] font-semibold text-slate-400 font-mono">ĐƠN VỊ</div>
+                  <div className="text-[9px] font-semibold text-slate-400 font-mono">Affiliation</div>
                   <div className="text-xs text-[#2d3436] leading-tight mt-0.5 font-medium">{profileData.department}</div>
                   <div className="text-[10px] text-slate-500 font-mono">{profileData.institution}</div>
                 </div>
@@ -75,7 +75,7 @@ export default function Education() {
               <div className="flex items-start gap-2.5">
                 <Mail className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-[9px] font-semibold text-slate-400 font-mono">LIÊN HỆ TRỰC TIẾP</div>
+                  <div className="text-[9px] font-semibold text-slate-400 font-mono">Contacts</div>
                   <a href={`mailto:${profileData.email}`} className="text-xs text-blue-600 hover:underline font-mono block mt-0.5">
                     {profileData.email}
                   </a>

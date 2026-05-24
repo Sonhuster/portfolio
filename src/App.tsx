@@ -35,7 +35,7 @@ export default function App() {
 
   const menuCategories = [
     {
-      title: "Van-Son Dinh",
+      title: "Home",
       items: [
         { id: "education", label: "Education", icon: GraduationCap },
         { id: "research-interests", label: "Research interests", icon: Dna },
@@ -93,7 +93,7 @@ export default function App() {
             </div>
             <div>
               <span className="font-display font-black text-slate-900 text-sm md:text-base tracking-tight block leading-tight">
-                Sơn Đỗ Viết
+                Van-Son Dinh
               </span>
               <span className="text-[10px] text-blue-600 font-mono block leading-none mt-0.5 font-bold">
                 MSc CANDIDATE
@@ -103,7 +103,7 @@ export default function App() {
 
           <div className="flex items-center justify-between border-t border-slate-100/80 pt-2.5">
             <span className="inline-flex items-center gap-1 bg-blue-50 text-blue-600 text-[9px] font-mono px-2.5 py-0.5 rounded-full border border-blue-100 font-bold">
-              HUST BIOTECH '26
+              MSc of Engineering '26
             </span>
           </div>
         </div>
@@ -166,7 +166,7 @@ export default function App() {
           </div>
           <div>
             <span className="font-display font-medium text-slate-900 text-sm tracking-tight block">
-              Sơn Đỗ Viết <span className="text-blue-650 font-mono text-[9px] font-bold">/ Candidates</span>
+              Van-Son Dinh <span className="text-blue-650 font-mono text-[9px] font-bold">/ Candidates</span>
             </span>
           </div>
         </div>
@@ -196,7 +196,7 @@ export default function App() {
           <div className="flex items-center justify-between border-b border-slate-100 pb-4">
             <div className="flex items-center gap-2">
               <Hexagon className="w-5 h-5 text-blue-600" />
-              <span className="font-display font-bold text-slate-900 text-sm">Sơn Đỗ Viết</span>
+              <span className="font-display font-bold text-slate-900 text-sm">Van-Son Dinh</span>
             </div>
             <button 
               id="btn-close-mobile-drawer"

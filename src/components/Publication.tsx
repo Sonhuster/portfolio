@@ -103,7 +103,7 @@ export default function Publication() {
 
                 <div className="border-t border-slate-100 pt-2.5 space-y-1 text-[11px] font-sans text-slate-600">
                   <div>
-                    <strong className="text-slate-700">Người báo cáo:</strong> Sơn Đỗ Viết
+                    <strong className="text-slate-700">Người báo cáo:</strong> Van-Son Dinh
                   </div>
                   <div>
                     <strong className="text-slate-700">Seminar:</strong> Hội nghị Khoa học Trẻ Sinh học & Công nghệ Sinh học HUST
