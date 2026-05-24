@@ -82,7 +82,6 @@ export default function Education() {
 
           {/* Mockup 2: Personal Highlight Info Card */}
           <div className="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-xs space-y-4 hover:border-slate-300/80 transition-colors duration-300">
-
             <p className="text-slate-600 text-xs md:text-sm leading-relaxed border-t border-slate-100 pt-3">
               A simple man with passion on Math, Computing Engineering, Programming, and Games
             </p>
@@ -167,9 +166,11 @@ export default function Education() {
                     <p className="text-xs text-slate-500 font-mono mt-0.5">{edu.department}</p>
                     
                     {edu.details && (
-                      <div className="mt-2.5 text-xs text-slate-600 leading-relaxed font-sans bg-slate-50 border border-slate-100/80 rounded-xl p-3 shadow-3xs transition-shadow hover:shadow-2xs">
-                        • {edu.details}
-                      </div>
+                      <ul className="mt-2.5 text-xs text-slate-600 leading-relaxed font-sans bg-slate-50 border border-slate-100/80 rounded-xl p-3 shadow-3xs transition-shadow hover:shadow-2xs list-disc list-inside">
+                        {edu.details.map((detail, index) => (
+                          <li key={index}>{detail}</li>
+                        ))}
+                      </ul>
                     )}
                   </div>
                 );

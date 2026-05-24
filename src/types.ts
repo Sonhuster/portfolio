@@ -69,7 +69,7 @@ export interface EducationItem {
   institution: string;
   department: string;
   period: string;
-  details: string;
+  details: string[];
   isCurrent?: boolean;
   type?: "current" | "discontinued" | "completed";
 }
