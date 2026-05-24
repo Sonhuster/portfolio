@@ -63,3 +63,13 @@ export interface PhilosophyItem {
   author: string;
   content: string;
 }
+
+export interface EducationItem {
+  degree: string;
+  institution: string;
+  department: string;
+  period: string;
+  details: string;
+  isCurrent?: boolean;
+  type?: "current" | "discontinued" | "completed";
+}

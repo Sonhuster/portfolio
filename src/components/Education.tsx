@@ -13,7 +13,7 @@ import {
   Award,
   Binary
 } from "lucide-react";
-import { profileData } from "../data";
+import { profileData, educationHistory } from "../data";
 
 export default function Education() {
   const stats = [
@@ -47,7 +47,7 @@ export default function Education() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
         {/* Left Side: Personal Highlight Card */}
-        <div className="lg:col-span- così lg:col-span-5 space-y-4">
+        <div className="lg:col-span-5 space-y-4">
           <div className="bg-white rounded-2xl border border-[#e9ecef] p-6 shadow-xs space-y-4">
             <div className="space-y-3">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono bg-blue-50 text-blue-900 border border-blue-100">
@@ -66,7 +66,7 @@ export default function Education() {
               <div className="flex items-start gap-2.5">
                 <Building2 className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-[9px] font-semibold text-slate-400 font-mono">Affiliation</div>
+                   <div className="text-[9px] font-semibold text-slate-400 font-mono">Affiliation</div>
                   <div className="text-xs text-[#2d3436] leading-tight mt-0.5 font-medium">{profileData.department}</div>
                   <div className="text-[10px] text-slate-500 font-mono">{profileData.institution}</div>
                 </div>
@@ -97,37 +97,48 @@ export default function Education() {
             </h5>
 
             <div className="relative pl-6 border-l border-slate-100 space-y-8">
-              {/* Timeline Item 1 */}
-              <div className="relative">
-                <span className="absolute -left-[30px] top-1.5 w-4 h-4 rounded-full bg-blue-50 border-2 border-blue-600 flex items-center justify-center">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-                </span>
-                <div className="flex justify-between items-start flex-wrap gap-2">
-                  <h6 className="font-display font-semibold text-sm text-slate-900"> Applied Mechanics (MSc) </h6>
-                  <span className="px-2 py-0.5 bg-blue-50 text-blue-600 border border-blue-100 rounded text-[10px] font-mono">2026 - Now (Expected 2028)</span>
-                </div>
-                <p className="text-xs text-slate-500 mt-0.5 font-medium">{profileData.institution}</p>
-                <p className="text-xs text-slate-400 mt-1">{profileData.department}</p>
-                <div className="mt-2 text-xs text-slate-600 leading-relaxed font-sans bg-slate-50 rounded-lg p-2.5 border border-slate-100/80">
-                  • Thesis topic: LES + Particle Solver + Machine Learning.
-                </div>
-              </div>
+              {educationHistory.map((edu, idx) => {
+                const isCurrent = edu.type === "current";
+                const isDiscontinued = edu.type === "discontinued";
+                
+                let markerOuterClasses = "bg-slate-100 border-slate-400";
+                let markerInnerClasses = "bg-slate-400";
+                let badgeClasses = "bg-slate-50 text-slate-500 border-slate-200";
 
-              {/* Timeline Item 2 */}
-              <div className="relative">
-                <span className="absolute -left-[30px] top-1.5 w-4 h-4 rounded-full bg-slate-100 border-2 border-slate-400 flex items-center justify-center">
-                  <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
-                </span>
-                <div className="flex justify-between items-start flex-wrap gap-2">
-                  <h6 className="font-display font-semibold text-sm text-slate-900">Aerospace Engineering (MSc - Discontinued)</h6>
-                  <span className="px-2 py-0.5 bg-slate-50 text-slate-500 border border-slate-200 rounded text-[10px] font-mono">2020 - 2024</span>
-                </div>
-                <p className="text-xs text-slate-500 mt-0.5 font-medium">{profileData.institution}</p>
-                <p className="text-xs text-slate-400 mt-1">Department of Aerospace Engineering</p>
-                <div className="mt-2 text-xs text-slate-600 leading-relaxed font-sans bg-slate-50 rounded-lg p-2.5 border border-slate-100/80">
-                  • Thesis topic: Turbulence modeling, high-fidelity advective schemes in Actuator Line Methods for Helicopter flow.
-                </div>
-              </div>
+                if (isCurrent) {
+                  markerOuterClasses = "bg-blue-50 border-blue-600";
+                  markerInnerClasses = "bg-blue-600";
+                  badgeClasses = "bg-blue-50 text-blue-600 border border-blue-100";
+                } else if (isDiscontinued) {
+                  markerOuterClasses = "bg-amber-50 border-amber-500";
+                  markerInnerClasses = "bg-amber-500";
+                  badgeClasses = "bg-amber-50 text-amber-700 border border-amber-200";
+                } else {
+                  // completed / other
+                  markerOuterClasses = "bg-emerald-50 border-emerald-600";
+                  markerInnerClasses = "bg-emerald-600";
+                  badgeClasses = "bg-emerald-50 text-emerald-700 border border-emerald-100";
+                }
+
+                return (
+                  <div key={idx} className="relative">
+                    <span className={`absolute -left-[30px] top-1.5 w-4 h-4 rounded-full border-2 flex items-center justify-center ${markerOuterClasses}`}>
+                      <span className={`w-1.5 h-1.5 rounded-full ${markerInnerClasses}`} />
+                    </span>
+                    <div className="flex justify-between items-start flex-wrap gap-2">
+                      <h6 className="font-display font-semibold text-sm text-slate-900">{edu.degree}</h6>
+                      <span className={`px-2 py-0.5 rounded text-[10px] font-mono border ${badgeClasses}`}>{edu.period}</span>
+                    </div>
+                    <p className="text-xs text-slate-600 mt-1 font-medium">{edu.institution}</p>
+                    <p className="text-xs text-slate-400 mt-0.5">{edu.department}</p>
+                    {edu.details && (
+                      <div className="mt-2 text-xs text-slate-600 leading-relaxed font-sans bg-slate-50 rounded-lg p-2.5 border border-slate-100/80">
+                        • {edu.details}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
 

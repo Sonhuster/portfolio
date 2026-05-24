@@ -1,4 +1,4 @@
-import { BlogPost, Achievement, ResearchProject, Experiment, Memory, PhilosophyItem } from "./types";
+import { BlogPost, Achievement, ResearchProject, Experiment, Memory, PhilosophyItem, EducationItem } from "./types";
 
 export const profileData = {
   name: "Van-Son Dinh",
@@ -240,5 +240,35 @@ export const blogPosts: BlogPost[] = [
       "5. Học cách nói 'Không' có chọn lọc: Sức lực của bạn có hạn. Tránh nhận quá nhiều việc phụ trợ không liên quan đến hướng nghiên cứu luận văn chính của bạn kẻo 'xôi hỏng bỏng không'."
     ],
     tags: ["Mental Health", "Sổ Tay Thạc Sĩ", "Kinh Nghiệm Sống", "HUST Life"]
+  }
+];
+
+export const educationHistory: EducationItem[] = [
+  {
+    degree: "Applied Mechanics (MSc)",
+    institution: "National Taiwan University (NTU)",
+    department: "Institute of Applied Mechanics",
+    period: "2026 - Now (Expected 2028)",
+    details: "Thesis topic: LES + Particle Solver + Machine Learning.",
+    isCurrent: true,
+    type: "current"
+  },
+  {
+    degree: "Aerospace Engineering (MSc - Discontinued)",
+    institution: "KAIST (Korea Advanced Institute of Science and Technology)",
+    department: "Department of Aerospace Engineering",
+    period: "2024 - 2025",
+    details: "Thesis topic: Turbulence modeling, high-fidelity advective schemes in Actuator Line Methods for Helicopter flow.",
+    isCurrent: false,
+    type: "discontinued"
+  },
+  {
+    degree: "Aerospace Engineering (BC)",
+    institution: "Hanoi University of Science and Technology (HUST)",
+    department: "School of Transportation Engineering",
+    period: "2020 - 2024",
+    details: "Focus: Aerodynamics, Computational Fluid Dynamics (CFD), Structural Mechanics.",
+    isCurrent: false,
+    type: "completed"
   }
 ];
