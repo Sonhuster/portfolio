@@ -83,7 +83,7 @@ export default function Education() {
           {/* Mockup 2: Personal Highlight Info Card */}
           <div className="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-xs space-y-4 hover:border-slate-300/80 transition-colors duration-300">
             <p className="text-slate-600 text-xs md:text-sm leading-relaxed border-t border-slate-100 pt-3">
-              A simple man with passion on Math, Computing Engineering, Programming, and Games
+              Math, Computing Engineering, Programming, and Games :)
             </p>
 
             <div className="space-y-3 border-t border-slate-100 pt-3">
