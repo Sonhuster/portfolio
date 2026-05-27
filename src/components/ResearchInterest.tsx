@@ -31,9 +31,6 @@ export default function ResearchInterest() {
         <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded border border-blue-100 uppercase">
           <Dna className="w-3.5 h-3.5" /> RESEARCH PASSIONS & PROJECTS
         </span>
-        <h3 className="text-2xl md:text-3xl font-display font-medium text-[#2d3436] mt-2">
-          Hướng Nghiên cứu & Đề tài
-        </h3>
         <p className="text-slate-500 text-xs md:text-sm mt-1">
           Các lĩnh vực nghiên cứu chuyên môn và chiến dịch khoa học đang theo đuổi.
         </p>

@@ -123,9 +123,6 @@ export default function AcademicBlog() {
                 <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded border border-blue-100 uppercase">
                   <BookOpen className="w-3.5 h-3.5" /> PERSONAL BLOG & JOURNEY
                 </span>
-                <h3 className="text-2xl md:text-3xl font-display font-medium text-[#2d3436] mt-2">
-                  Academic Blog (Con Đường Học Thuật)
-                </h3>
                 <p className="text-slate-500 text-xs md:text-sm mt-1">
                   Nhật ký nghiên cứu, hành trình tự học Sinh tin học, và kinh nghiệm học thạc sĩ tại Bách khoa Hà Nội.
                 </p>

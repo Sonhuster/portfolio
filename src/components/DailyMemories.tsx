@@ -58,9 +58,6 @@ export default function DailyMemories() {
           <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded border border-blue-100 uppercase">
             <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500" /> Daily Diaries & Memories
           </span>
-          <h3 className="text-2xl md:text-3xl font-display font-medium text-[#2d3436] mt-2">
-            Nhật Ký & Kỷ Niệm Đời Thường
-          </h3>
           <p className="text-slate-500 text-xs md:text-sm mt-1">
             Ghi lại những khoảnh khắc đời thường ý nghĩa bên ngoài những biểu đồ khô khan của phòng thí nghiệm.
           </p>

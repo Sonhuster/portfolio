@@ -44,9 +44,6 @@ export default function Education() {
         <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded border border-blue-100 uppercase">
           <GraduationCap className="w-3.5 h-3.5" /> PROFILE & EDUCATION
         </span>
-        <h3 className="text-2xl md:text-3.5xl font-display font-black text-[#1e293b] mt-2 tracking-tight">
-          Academic Journey
-        </h3>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">

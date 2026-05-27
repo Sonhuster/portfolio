@@ -298,7 +298,7 @@ export const workExperiences: ExperienceItem[] = [
         description: "Applying machine learning-based (GPR) and optimization-based model for parameters optimization of kinetic reaction model."
       },
       {
-        name: "Personal Mesh Solver Project",
+        name: "Personal Unstructured Mesh Solver Project",
         description: "Developed 2D unstructured mesh FVM solver for incompressible flow (SIMPLE) and compressible flow (Riemann solver – ROE, AUSM)."
       }
     ]

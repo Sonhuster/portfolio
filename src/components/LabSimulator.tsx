@@ -241,9 +241,6 @@ export default function LabSimulator() {
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-2">
               <FlaskConical className="w-3.5 h-3.5" /> Virtual Lab Area (Thực hành Ảo)
             </span>
-            <h3 className="text-2xl font-display font-medium tracking-tight">
-              Sở thị Công việc Nghiên cứu của Nhà Khoa học
-            </h3>
             <p className="text-slate-400 text-sm mt-1">
               Khám phá thực tế các thí nghiệm Wet Lab & Dry Lab mà Sơn chạy hằng tuần ngay trên trình duyệt của bạn.
             </p>
