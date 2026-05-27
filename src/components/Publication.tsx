@@ -32,17 +32,17 @@ export default function Publication() {
           <FileText className="w-3.5 h-3.5" /> BIBLIOGRAPHY & HONORS
         </span>
         <p className="text-slate-500 text-xs md:text-sm mt-1">
-          Các bài báo khoa học, báo cáo chuyên sâu và thành tựu học thuật tiêu biểu.
+          Scientific papers, detailed reports, and highlighted academic achievements.
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         
         {/* Left Side: Publications Block */}
-        <div className="lg:col-span- così lg:col-span-7 space-y-6 flex flex-col">
+        <div className="lg:col-span-7 space-y-6 flex flex-col">
           <div className="bg-white rounded-2xl border border-[#e9ecef] p-6 shadow-xs flex-1 space-y-6">
             <h4 className="text-sm font-semibold text-[#2d3436] font-display flex items-center gap-2 border-b border-slate-100 pb-3 uppercase tracking-wider">
-              <Bookmark className="w-4 h-4 text-blue-600" /> Tạp chí & Công bố Khoa học (Peer-Reviewed)
+              <Bookmark className="w-4 h-4 text-blue-600" /> Journals & Scientific Publications (Peer-Reviewed)
             </h4>
 
             <div className="space-y-6">
@@ -64,13 +64,13 @@ export default function Publication() {
 
                   <div className="border-t border-slate-100 pt-2.5 space-y-1 text-[11px] font-sans">
                     <div>
-                      <strong className="text-slate-700">Tác giả:</strong> {pub.publication?.authors}
+                      <strong className="text-slate-700">Authors:</strong> {pub.publication?.authors}
                     </div>
                     <div>
-                      <strong className="text-slate-700">Tạp chí:</strong> <span className="text-blue-600 font-medium">{pub.publication?.journal}</span>
+                      <strong className="text-slate-700">Journal:</strong> <span className="text-blue-600 font-medium">{pub.publication?.journal}</span>
                     </div>
                     <div>
-                      <strong className="text-slate-700">Trạng thái:</strong> <span className="inline-flex items-center text-amber-600 bg-amber-50 px-1.5 py-0.2 rounded font-mono font-semibold">Đang chỉnh sửa / Chờ duyệt (In Review)</span>
+                      <strong className="text-slate-700">Status:</strong> <span className="inline-flex items-center text-amber-600 bg-amber-50 px-1.5 py-0.2 rounded font-mono font-semibold">Editing / Under Review (In Review)</span>
                     </div>
                   </div>
 
@@ -93,20 +93,20 @@ export default function Publication() {
 
                 <div className="space-y-1">
                   <h5 className="font-display font-semibold text-xs md:text-sm text-slate-900 leading-snug">
-                    "Tối ưu hóa xúc tác phân hủy polyethylene terephthalate thông qua học tập định danh đột biến điểm của enzyme HL-PET1"
+                    "Optimization of catalytic degradation of polyethylene terephthalate via point mutation identification of HL-PET1 enzyme"
                   </h5>
                   <p className="text-[11px] text-slate-500 font-mono italic">AI-assisted optimization of environmental plastic degradation enzymes</p>
                 </div>
 
                 <div className="border-t border-slate-100 pt-2.5 space-y-1 text-[11px] font-sans text-slate-600">
                   <div>
-                    <strong className="text-slate-700">Người báo cáo:</strong> Van-Son Dinh
+                    <strong className="text-slate-700">Presenter:</strong> Van-Son Dinh
                   </div>
                   <div>
-                    <strong className="text-slate-700">Seminar:</strong> Hội nghị Khoa học Trẻ Sinh học & Công nghệ Sinh học HUST
+                    <strong className="text-slate-700">Seminar:</strong> HUST Young Scientists Conference on Biology & Biotechnology
                   </div>
                   <div>
-                    <strong className="text-slate-705">Địa điểm:</strong> Hội trường C1-203, HUST
+                    <strong className="text-slate-705">Location:</strong> Seminar Hall C1-203, HUST
                   </div>
                 </div>
               </div>
@@ -115,14 +115,14 @@ export default function Publication() {
         </div>
 
         {/* Right Side: Achievements & Awards Listing */}
-        <div className="lg:col-span- così lg:col-span-5 flex flex-col">
+        <div className="lg:col-span-5 flex flex-col">
           <div className="bg-slate-900 text-white rounded-2xl p-6 border border-slate-800 shadow-sm flex-1 relative overflow-hidden flex flex-col justify-between">
             {/* background design accent */}
             <div className="absolute -right-12 -bottom-12 w-40 h-40 bg-blue-500/5 rounded-full blur-2xl pointer-events-none" />
 
             <div className="space-y-6 z-10">
               <h4 className="text-xs font-semibold tracking-wider uppercase text-blue-400 font-mono flex items-center gap-1.5 border-b border-slate-800 pb-3">
-                <Trophy className="w-4 h-4" /> Thành tích & Giải thưởng nổi bật
+                <Trophy className="w-4 h-4" /> Honors & Highlighted Academic Awards
               </h4>
 
               <div className="space-y-6">

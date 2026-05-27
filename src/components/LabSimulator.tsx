@@ -141,11 +141,11 @@ export default function LabSimulator() {
     const currentOd = ods[ods.length - 1];
     // Golden window of OD600 is 0.6 - 0.9 (around hour 3 or 4)
     if (currentOd >= 0.5 && currentOd <= 0.95) {
-      setYieldResult("Chúc mừng! Bạn cảm ứng đúng 'Thời điểm vàng' (OD600 = " + currentOd + "). Hiệu suất biểu hiện protein HL-PET1 đạt cực đại: 94% tinh sạch.");
+      setYieldResult("Congratulations! You induced at the golden ratio window (OD600 = " + currentOd + "). HL-PET1 protein expression reached maximum peak: 94% purity.");
     } else if (currentOd < 0.5) {
-      setYieldResult("Quá sớm! Mật độ tế bào E. coli còn quá loãng (OD600 = " + currentOd + "). Vi khuẩn bị ngộ độc IPTG trước khi sinh khối, hiệu suất protein cực kém: 12%.");
+      setYieldResult("Too early! E. coli cell density is still too low (OD600 = " + currentOd + "). Live cultures were toxic-stressed with IPTG prior to biomass production. Expression yield is poor: 12%.");
     } else {
-      setYieldResult("Trễ mất rồi! Vi khuẩn E. coli đã bước vào pha suy thoái (OD600 = " + currentOd + "). Tế bào đã già, protein bị vón cục tích tụ (Inclusion Bodies) khó tinh sạch: 28%.");
+      setYieldResult("Too late! E. coli has already entered the death phase (OD600 = " + currentOd + "). Cells are exhausted and the target protein formed insoluble Inclusion Bodies. Yield: 28%.");
     }
   };
 
@@ -183,21 +183,21 @@ export default function LabSimulator() {
             pos: i + 1,
             ref: charA,
             alt: charB,
-            type: "Đột biến điểm (Substitution)"
+            type: "Point mutation (Substitution)"
           });
         } else if (charA === "-") {
           mutations.push({
             pos: i + 1,
             ref: "-",
             alt: charB,
-            type: "Thêm nuclêôtit (Insertion)"
+            type: "Nucleotide insertion (Insertion)"
           });
         } else {
           mutations.push({
             pos: i + 1,
             ref: charA,
             alt: "-",
-            type: "Mất nuclêôtit (Deletion)"
+            type: "Nucleotide deletion (Deletion)"
           });
         }
       }
@@ -239,10 +239,10 @@ export default function LabSimulator() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-2">
-              <FlaskConical className="w-3.5 h-3.5" /> Virtual Lab Area (Thực hành Ảo)
+              <FlaskConical className="w-3.5 h-3.5" /> Virtual Lab Area (Interactive Sandbox)
             </span>
             <p className="text-slate-400 text-sm mt-1">
-              Khám phá thực tế các thí nghiệm Wet Lab & Dry Lab mà Sơn chạy hằng tuần ngay trên trình duyệt của bạn.
+              Explore interactive simulations of the Wet Lab & Dry Lab experiments that Son conducts weekly right in your browser.
             </p>
           </div>
           
@@ -278,7 +278,7 @@ export default function LabSimulator() {
                   : "bg-transparent border-transparent hover:bg-slate-800/30 text-slate-400 hover:text-slate-200"
               }`}
             >
-              <div className="text-[10px] font-mono uppercase tracking-wider text-slate-500">Thí nghiệm 0{idx + 1}</div>
+              <div className="text-[10px] font-mono uppercase tracking-wider text-slate-500">Experiment 0{idx + 1}</div>
               <div className="font-display font-medium text-xs md:text-sm truncate mt-0.5">{exp.title.split("(")[0].trim()}</div>
             </button>
           ))}
@@ -308,7 +308,7 @@ export default function LabSimulator() {
             
             <div className="mt-4 p-4 bg-white rounded-xl border border-slate-200/60 shadow-xs">
               <div className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider font-mono flex items-center gap-1.5">
-                <Info className="w-3.5 h-3.5 text-blue-500" /> Mục tiêu Khoa học:
+                <Info className="w-3.5 h-3.5 text-blue-500" /> Scientific Objective:
               </div>
               <p className="text-slate-600 text-sm mt-2 leading-relaxed">
                 {currentExp.objective}
@@ -318,7 +318,7 @@ export default function LabSimulator() {
             {/* Equipment/Tools */}
             <div className="mt-5">
               <div className="text-xs font-mono font-semibold text-slate-400 uppercase tracking-wider">
-                Vật tư & Công cụ sử dụng:
+                Required Instruments & Materials:
               </div>
               <div className="flex flex-wrap gap-1.5 mt-2">
                 {currentExp.equipment.map((eq, i) => (
@@ -333,7 +333,7 @@ export default function LabSimulator() {
           {/* Procedure guide */}
           <div className="mt-8 pt-6 border-t border-slate-200/60">
             <div className="text-xs font-semibold text-slate-500 uppercase tracking-widest font-mono mb-3">
-              Quy Trình Chuẩn (SOP Steps):
+              Standard Operating Procedure (SOP Steps):
             </div>
             <div className="space-y-3.5">
               {currentExp.steps.map((st) => (
@@ -361,9 +361,9 @@ export default function LabSimulator() {
               <div className="space-y-6">
                 <div className="text-center mb-2">
                   <h5 className="font-mono text-sm text-emerald-400 flex items-center justify-center gap-1.5">
-                    <Layers className="w-4 h-4" /> Hệ máy phân tích Agarose Gel BioRad 3000
+                    <Layers className="w-4 h-4" /> Bio-Rad 3000 Agarose Gel Electrophoresis System
                   </h5>
-                  <p className="text-xs text-slate-500 mt-1">Sử dụng lực điện động để phân tách gien dựa trên trọng lượng phân tử.</p>
+                  <p className="text-xs text-slate-500 mt-1">Uses electric potential to separate DNA/RNA fragments based on molecular weight.</p>
                 </div>
 
                 <div className="flex justify-center">
@@ -372,13 +372,13 @@ export default function LabSimulator() {
                     {/* Glowing Electrode Rails */}
                     <div className="absolute top-1 left-4 right-4 h-1.5 bg-red-600/30 rounded flex items-center justify-between px-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-                      <span className="text-[7px] font-mono text-red-500 font-bold">Cực Âm (-)</span>
+                      <span className="text-[7px] font-mono text-red-500 font-bold">Cathode (-)</span>
                       <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
                     </div>
 
                     <div className="absolute bottom-1 left-4 right-4 h-1.5 bg-blue-600/30 rounded flex items-center justify-between px-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-                      <span className="text-[7px] font-mono text-blue-400 font-bold">Cực Dương (+)</span>
+                      <span className="text-[7px] font-mono text-blue-400 font-bold">Anode (+)</span>
                       <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
                     </div>
 
@@ -393,7 +393,7 @@ export default function LabSimulator() {
                       
                       {!gelPoured && (
                         <div className="absolute inset-0 flex items-center justify-center text-xs text-slate-600 font-mono">
-                          Khay điện di trống
+                          Electrophoresis Chamber Empty
                         </div>
                       )}
 
@@ -422,7 +422,7 @@ export default function LabSimulator() {
 
                             {/* Lane 1: Thang DNA 1kb (Ladder) */}
                             <div className="w-8 flex flex-col justify-start relative">
-                              <span className="absolute -top-1 left-0 right-0 text-[7px] text-center font-mono text-slate-500">Mẫu Đơn</span>
+                              <span className="absolute -top-1 left-0 right-0 text-[7px] text-center font-mono text-slate-500">Ladder</span>
                               
                               {/* Glowing bands under UV */}
                               {uvLight && (
@@ -495,7 +495,7 @@ export default function LabSimulator() {
                         : "bg-slate-800 border-slate-700 hover:bg-slate-700 text-slate-200"
                     }`}
                   >
-                    1. Đổ Gel Agarose
+                    1. Pour Agarose Gel
                   </button>
 
                   <button
@@ -508,7 +508,7 @@ export default function LabSimulator() {
                         : "bg-slate-800 border-slate-700 hover:bg-slate-700 text-slate-200"
                     }`}
                   >
-                    2. Nạp Mẫu DNA
+                    2. Load DNA Samples
                   </button>
 
                   <button
@@ -521,7 +521,7 @@ export default function LabSimulator() {
                         : "bg-blue-600 border-blue-500 hover:bg-blue-500 text-white font-semibold"
                     }`}
                   >
-                    {isGelRunning ? `Bơm Điện (${gelProgress}%)` : "3. Chạy Điện Phổ"}
+                    {isGelRunning ? `Running (${gelProgress}%)` : "3. Run Electrophoresis"}
                   </button>
 
                   <button
@@ -536,7 +536,7 @@ export default function LabSimulator() {
                           : "bg-slate-800 border-slate-700 hover:bg-slate-700 text-slate-200"
                     }`}
                   >
-                    {uvLight ? "Tắt Đèn UV ✖" : "4. Soi UV Đọc Gien"}
+                    {uvLight ? "Turn Off UV ✖" : "4. Expose UV to Image Gel"}
                   </button>
                 </div>
 
@@ -545,22 +545,22 @@ export default function LabSimulator() {
                   <div className="flex items-center gap-2 text-slate-500">
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-500" /> State Logs:
                   </div>
-                  {!gelPoured && <div className="text-slate-500">Vui lòng bấm 'Đổ Gel Agarose' để pha chế đệm ADN agarose và đặt phao lược giếng.</div>}
-                  {gelPoured && !loaded && <div className="text-blue-400">➢ Gel agarose hóa đặc thành công. Hãy cẩn thận dùng pipette nạp các mẫu DNA vào giếng tương ứng.</div>}
-                  {loaded && !isGelRunning && gelProgress === 0 && <div className="text-amber-400">➢ Giếng 1: Phao đo chuẩn (1kb Ladder). Giếng 2: DNA gen nấm của bạn. Hãy đóng nắp bật luồng điện 100V.</div>}
+                  {!gelPoured && <div className="text-slate-500">Please click 'Pour Agarose Gel' to prepare the buffer matrix and lay down the well comb.</div>}
+                  {gelPoured && !loaded && <div className="text-blue-400">➢ Gel agarose solidified successfully. Carefully pipette the DNA samples into the respective lanes.</div>}
+                  {loaded && !isGelRunning && gelProgress === 0 && <div className="text-amber-400">➢ Lane 1: Reference ladder (1kb Ladder). Lane 2: Your target DNA sample. Close the box and power on 100V.</div>}
                   {isGelRunning && (
                     <div className="text-blue-400 animate-pulse">
-                      ⚡ Đang chạy điện ly tích cực... Ion H+ sủi bọt khí cực âm... DNA chuyển dịch về điện cực kẽ dải âm... ({gelProgress}%)
+                      ⚡ High-performance electrophoresis running... H+ bubbles rising... DNA fragments moving toward Anode... ({gelProgress}%)
                     </div>
                   )}
                   {gelProgress === 100 && !uvLight && (
                     <div className="text-violet-400">
-                      ✓ Đạt pha hoàn tất điện di! Dải màu chỉ thị bromophenol blue đã di chuyển chạm vách đáy. BẬT SOO UV để xem băng gien phát huỳnh quang.
+                      ✓ Electrophoresis reached final phase! Bromophenol blue dye has migrated to the bottom. Turn on UV to visualize glowing bands.
                     </div>
                   )}
                   {uvLight && (
                     <div className="text-blue-300 font-bold flex items-center gap-1">
-                      <Sparkles className="w-3.5 h-3.5 text-amber-400" /> Băng sáng xuất hiện tại vạch ~1,500 bp! Đúng hoàn hảo với kích cỡ lý thuyết của gien mã hóa enzyme HL-PET1. Sinh bản nhân dòng tối ưu thành công!
+                      <Sparkles className="w-3.5 h-3.5 text-amber-400" /> ✓ Bright band visualized at ~1,500 bp! Perfect size correlation with theoretical model of the HL-PET1 enzyme. Expression cloning successful!
                     </div>
                   )}
                 </div>
@@ -570,7 +570,7 @@ export default function LabSimulator() {
                   onClick={resetElectrophoresis}
                   className="mx-auto flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-300 transition-colors font-mono"
                 >
-                  <RotateCcw className="w-3.5 h-3.5" /> Khởi tạo lại thiết lập bể điện di
+                  <RotateCcw className="w-3.5 h-3.5" /> Reset Electrophoresis Setup
                 </button>
               </div>
             )}
@@ -581,9 +581,9 @@ export default function LabSimulator() {
               <div className="space-y-6">
                 <div className="text-center mb-1">
                   <h5 className="font-mono text-sm text-blue-400 flex items-center justify-center gap-1.5">
-                    <TrendingUp className="w-4 h-4" /> Hệ đo Optical Density Eppendorf 600
+                    <TrendingUp className="w-4 h-4" /> Eppendorf 600 Optical Density Spectrophotometer
                   </h5>
-                  <p className="text-xs text-slate-500 mt-1">Dựng biểu đồ sinh trưởng sinh khối vi sinh vật E. coli nuôi cấy.</p>
+                  <p className="text-xs text-slate-500 mt-1">Plots the real-time growth curve of E. coli host cells under culture.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
@@ -618,7 +618,7 @@ export default function LabSimulator() {
                       {/* OD Points and connecting lines */}
                       {hours.length === 0 ? (
                         <div className="absolute inset-0 flex items-center justify-center text-xs text-slate-700 font-mono">
-                          Bấm nút cấy khuẩn để nạp biểu đồ đo sinh trưởng...
+                          Click 'Inoculate & Measure' to map the growth performance profile...
                         </div>
                       ) : (
                         hours.map((hr, idx) => {
@@ -645,7 +645,7 @@ export default function LabSimulator() {
                               
                               {/* Hover data label */}
                               <div className="absolute bottom-10 bg-slate-900 border border-slate-700 text-[9px] px-1 py-0.5 rounded font-mono hidden group-hover:block whitespace-nowrap z-20">
-                                Giờ: {hr} | OD: {odValue}
+                                Hour: {hr} | OD: {odValue}
                               </div>
                             </div>
                           );
@@ -655,7 +655,7 @@ export default function LabSimulator() {
                       {/* Golden Induction Target Zone Indicator Ribbon */}
                       {hours.length > 0 && (
                         <div className="absolute bottom-7 left-0 right-0 h-4 bg-blue-500/5 border-y border-blue-500/10 pointer-events-none flex items-center justify-end px-3">
-                          <span className="text-[7px] font-mono text-blue-400/85">Khu vực cảm ứng tỉ lệ vàng (OD600: 0.6 - 0.85)</span>
+                          <span className="text-[7px] font-mono text-blue-400/85">Optimal induction target stage (OD600: 0.6 - 0.85)</span>
                         </div>
                       )}
 
@@ -665,18 +665,18 @@ export default function LabSimulator() {
                   {/* Left panel measurements */}
                   <div className="md:col-span-4 space-y-3">
                     <div className="bg-slate-950 p-3 rounded-2xl border border-slate-800 text-center">
-                      <div className="text-[9px] text-slate-500 font-mono uppercase">Lần đo cuối (OD600)</div>
+                      <div className="text-[9px] text-slate-500 font-mono uppercase">Last Measurement (OD600)</div>
                       <div className="text-3xl font-display font-bold text-white mt-1">
                         {ods.length > 0 ? ods[ods.length - 1] : "0.00"}
                       </div>
                       <div className="text-[10px] font-mono text-slate-400 mt-1">
-                        Giờ thứ: {hours.length > 0 ? hours[hours.length - 1] : "0"}
+                        Hour elapsed: {hours.length > 0 ? hours[hours.length - 1] : "0"}
                       </div>
                     </div>
 
                     <div className="bg-slate-950 p-2.5 rounded-xl border border-slate-800 flex justify-between items-center">
                       <span className="text-[10px] font-mono text-slate-400 flex items-center gap-1">
-                        <Thermometer className="w-3 h-3 text-red-500" /> Nhiệt độ tủ:
+                        <Thermometer className="w-3 h-3 text-red-500" /> Incubator Temp:
                       </span>
                       <span className="text-xs font-mono text-white font-semibold">37 °C</span>
                     </div>
@@ -696,7 +696,7 @@ export default function LabSimulator() {
                         : "bg-slate-800 border-slate-700 hover:bg-slate-700 text-slate-200"
                     }`}
                   >
-                    🚀 Bơm khuẩn / Đo ODh+ (H{hours.length})
+                    🚀 Inoculate & Measure OD (H{hours.length})
                   </button>
 
                   <button
@@ -709,7 +709,7 @@ export default function LabSimulator() {
                         : "bg-violet-600 border-violet-500 hover:bg-violet-500 text-white font-semibold shadow-lg shadow-violet-900/30"
                     }`}
                   >
-                    🧬 Đổ IPTG Cảm Ứng Protein
+                    🧬 Induce with IPTG Agent
                   </button>
                 </div>
 
@@ -718,7 +718,7 @@ export default function LabSimulator() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     className={`p-4 rounded-xl border text-xs font-mono leading-relaxed ${
-                      yieldResult.includes("Chúc mừng")
+                      yieldResult.includes("Congratulations")
                         ? "bg-emerald-950/85 border-emerald-500/30 text-emerald-300"
                         : "bg-amber-950/80 border-amber-500/30 text-amber-300"
                     }`}
@@ -732,7 +732,7 @@ export default function LabSimulator() {
                   onClick={resetSpectroscopy}
                   className="mx-auto flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-300 transition-colors font-mono"
                 >
-                  <RotateCcw className="w-3.5 h-3.5" /> Rửa bình cấy khuẩn (Reset)
+                  <RotateCcw className="w-3.5 h-3.5" /> Reset Bioreactor Vessel (Wash)
                 </button>
               </div>
             )}
@@ -743,15 +743,15 @@ export default function LabSimulator() {
               <div className="space-y-6">
                 <div className="text-center mb-1">
                   <h5 className="font-mono text-sm text-blue-400 flex items-center justify-center gap-1.5">
-                    <Binary className="w-4 h-4" /> Thuật toán Smith-Waterman Căn hàng Gen di truyền
+                    <Binary className="w-4 h-4" /> Needleman-Wunsch / Smith-Waterman Sequence Aligner
                   </h5>
-                  <p className="text-xs text-slate-500 mt-1">So sánh thực nghiệm chuỗi gien HL-PET1 giải trình tự với ngân hàng gen NCBI.</p>
+                  <p className="text-xs text-slate-500 mt-1">Compare local experimental sequenced data of biological samples with NCBI reference libraries.</p>
                 </div>
 
                 {/* Input forms seq A / B */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div className="flex flex-col gap-1">
-                    <label className="text-[10px] font-mono text-slate-500 tracking-wider">Chuỗi Tham Chiếu (Reference DNA seq):</label>
+                    <label className="text-[10px] font-mono text-slate-500 tracking-wider">Reference DNA Sequence (Seq A):</label>
                     <input
                       id="input-sequence-a"
                       type="text"
@@ -767,7 +767,7 @@ export default function LabSimulator() {
                   </div>
 
                   <div className="flex flex-col gap-1">
-                    <label className="text-[10px] font-mono text-slate-500 tracking-wider">Chuỗi Thực Nghiệm (Lab Sequenced seq):</label>
+                    <label className="text-[10px] font-mono text-slate-500 tracking-wider">Lab Sequenced DNA Sequence (Seq B):</label>
                     <input
                       id="input-sequence-b"
                       type="text"
@@ -789,7 +789,7 @@ export default function LabSimulator() {
                     <div className="flex justify-between items-center pb-2 border-b border-slate-950">
                       <span className="text-[10px] font-mono text-slate-400 uppercase">Interactive Sequence Aligner</span>
                       <div className="flex gap-3">
-                        <span className="text-[10px] font-mono text-blue-400 font-bold">🎯 Trùng lặp: {alignment.identityPct}%</span>
+                        <span className="text-[10px] font-mono text-blue-400 font-bold">🎯 Identity: {alignment.identityPct}%</span>
                         <span className="text-[10px] font-mono text-sky-400 font-bold">📈 Alignment Score: {alignment.score}</span>
                       </div>
                     </div>
@@ -800,7 +800,7 @@ export default function LabSimulator() {
                         
                         {/* Sequence A ROW */}
                         <div className="flex items-center gap-1 text-slate-400">
-                          <span className="text-[9px] w-14 text-slate-500 font-mono select-none">Seq_A_Ref:</span>
+                          <span className="text-[9px] w-14 text-slate-500 font-mono select-none">Seq A (Ref):</span>
                           <div className="flex">
                             {alignment.matchString.split("").map((char, idx) => {
                               const isMatch = char === alignment.comparison[idx];
@@ -808,7 +808,7 @@ export default function LabSimulator() {
                                 <span 
                                   key={idx} 
                                   className={`w-4 h-6 flex items-center justify-center rounded text-sm font-bold ${
-                                    isMatch ? "bg-blue-550/10 text-blue-400" : "bg-red-500/20 text-red-400"
+                                    isMatch ? "bg-blue-550/10 text-blue-450" : "bg-red-500/20 text-red-550"
                                   }`}
                                 >
                                   {char}
@@ -840,7 +840,7 @@ export default function LabSimulator() {
 
                         {/* Sequence B ROW */}
                         <div className="flex items-center gap-1 text-white">
-                          <span className="text-[9px] w-14 text-slate-500 font-mono select-none">Seq_B_Lab:</span>
+                          <span className="text-[9px] w-14 text-slate-500 font-mono select-none">Seq B (Lab):</span>
                           <div className="flex text-white">
                             {alignment.comparison.split("").map((char, idx) => {
                               const isMatch = char === alignment.matchString[idx];
@@ -864,10 +864,10 @@ export default function LabSimulator() {
                     {/* Detected Mutations Summary */}
                     <div className="text-[11px] font-mono text-slate-400 border-t border-slate-900 pt-3">
                       <div className="text-slate-500 flex items-center gap-1 mb-1.5">
-                        <Info className="w-3.5 h-3.5 text-blue-400" /> Báo cáo biến động cấu trúc nucleotide:
+                        <Info className="w-3.5 h-3.5 text-blue-400" /> Nucleotide mutation reports:
                       </div>
                       {alignment.mutations.length === 0 ? (
-                        <div className="text-blue-400 font-bold">✓ Không phát hiện đột biến. Chuỗi khớp 100% với gen đối chứng hoang dại (Wild type).</div>
+                        <div className="text-blue-400 font-bold">✓ No mutation signatures detected. Match rating is 100% with Wild Type sequence.</div>
                       ) : (
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5 max-h-24 overflow-y-auto pr-1">
                           {alignment.mutations.map((mut, i) => (
@@ -892,7 +892,7 @@ export default function LabSimulator() {
                     }}
                     className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 py-1.5 px-3 rounded-lg font-mono font-medium transition-colors"
                   >
-                    Reset Chuỗi Hoang Dại (Khớp 100%)
+                    Reset to Wild Type (100% Match)
                   </button>
                   
                   <button
@@ -906,7 +906,7 @@ export default function LabSimulator() {
                     }}
                     className="text-xs bg-red-950 hover:bg-red-900/60 text-red-300 border border-red-900/40 py-1.5 px-3 rounded-lg font-mono font-medium transition-colors"
                   >
-                    Tạo mô phỏng Đột Biến Điểm
+                    Simulate Point Mutation
                   </button>
                 </div>
               </div>
@@ -917,7 +917,7 @@ export default function LabSimulator() {
           {/* Footer of the simulator */}
           <div className="mt-6 pt-4 border-t border-slate-800 text-[10px] font-mono text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-2">
             <span>Terminal: bio@hust-computational-node-402</span>
-            <span>Mô phỏng dữ liệu thực nghiệm • {profileData.name}</span>
+            <span>Experimental Data Simulation • {profileData.name}</span>
           </div>
 
         </div>

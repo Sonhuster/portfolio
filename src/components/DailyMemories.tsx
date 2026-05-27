@@ -59,7 +59,7 @@ export default function DailyMemories() {
             <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500" /> Daily Diaries & Memories
           </span>
           <p className="text-slate-500 text-xs md:text-sm mt-1">
-            Ghi lại những khoảnh khắc đời thường ý nghĩa bên ngoài những biểu đồ khô khan của phòng thí nghiệm.
+            Capturing meaningful moments outside the dry charts and scientific equations of the laboratory.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ export default function DailyMemories() {
                   : "text-slate-500 hover:text-slate-900"
               }`}
             >
-              {filter === "All" ? "Tất cả" : filter}
+              {filter === "All" ? "All" : filter}
             </button>
           ))}
         </div>
@@ -155,7 +155,7 @@ export default function DailyMemories() {
                       : "text-blue-600 hover:text-blue-800"
                   }`}
                 >
-                  {isExpanded ? "Đóng nhật ký ✖" : "Đọc chi tiết câu chuyện ➜"}
+                  {isExpanded ? "Close diary ✖" : "Read full memory ➜"}
                 </button>
               </div>
             </motion.div>
@@ -165,7 +165,7 @@ export default function DailyMemories() {
 
       {filteredMemories.length === 0 && (
         <div className="text-center py-12 text-xs font-mono text-slate-400">
-          Chưa có nhật ký ghi chép cho bộ lọc '{activeFilter}'.
+          No memories recorded yet for the category '{activeFilter}'.
         </div>
       )}
 

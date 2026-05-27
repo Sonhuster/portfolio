@@ -28,7 +28,7 @@ export default function Footer() {
 
         {/* Center contact badges */}
         <div className="flex flex-col sm:flex-row items-center gap-4 text-xs font-mono">
-          <span className="text-slate-500 text-[11px]">Đại học Bách khoa Hà Nội (HUST)</span>
+          <span className="text-slate-500 text-[11px]">Hanoi University of Science and Technology (HUST)</span>
           <span className="hidden sm:inline text-slate-700">•</span>
           <a 
             href={`mailto:${profileData.email}`}

@@ -13,7 +13,7 @@ import {
   Sparkles,
   BookmarkCheck
 } from "lucide-react";
-import { blogPosts } from "../data";
+import { blogPosts, profileData } from "../data";
 import { BlogPost } from "../types";
 
 interface Comment {
@@ -50,17 +50,17 @@ export default function AcademicBlog() {
       const initialComments: Comment[] = [
         {
           postId: "blog1",
-          author: "Nguyễn Thùy Linh",
+          author: "Linh Thuy Nguyen",
           email: "linhnt@hust.edu.vn",
-          text: "Bài viết xúc động và chân thực quá Sơn ơi! Mình cũng đang làm luận văn thạc sĩ năm cuối, nhiều lúc nản chí chỉ muốn bỏ ngang. Đọc dòng chữ 'Đồng hành phòng Lab thấu hiểu lẫn nhau...' thấy ấm lòng hẳn.",
-          timestamp: "23 Tháng 05, 2026 - 10:20"
+          text: "This is deeply touching and incredibly realistic, Son! I am also in my final year of Master's study and often feel discouraged. Reading your reflections on laboratory companionship brings warmth to my heart.",
+          timestamp: "May 23, 2026 - 10:20"
         },
         {
           postId: "blog2",
-          author: "Thầy Hướng Dẫn K19",
+          author: "HUST Advisor K19",
           email: "linh.hp@hust.edu.vn",
-          text: "Nỗ lực dấn thân rất tốt! Kết hợp giữa tính toán lý thuyết và Wet Lab là tương lai của CNSH. Chúc đồ án thạc sĩ đạt điểm cao và sớm công bố bài Journal sắp tới nhé em.",
-          timestamp: "23 Tháng 05, 2026 - 14:15"
+          text: "Excellent dedication! Bridging computational fluid dynamics and wet lab validations is the future of modern engineering. Wishing you high marks on your Master's thesis and successful upcoming journal publications.",
+          timestamp: "May 23, 2026 - 14:15"
         }
       ];
       setComments(initialComments);
@@ -77,7 +77,7 @@ export default function AcademicBlog() {
       author: newCommentAuthor,
       email: newCommentEmail.trim() || "anonymous@hust.edu.vn",
       text: newCommentText,
-      timestamp: new Date().toLocaleString("vi-VN", {
+      timestamp: new Date().toLocaleString("en-US", {
         day: "numeric",
         month: "long",
         year: "numeric",
@@ -124,7 +124,7 @@ export default function AcademicBlog() {
                   <BookOpen className="w-3.5 h-3.5" /> PERSONAL BLOG & JOURNEY
                 </span>
                 <p className="text-slate-500 text-xs md:text-sm mt-1">
-                  Nhật ký nghiên cứu, hành trình tự học Sinh tin học, và kinh nghiệm học thạc sĩ tại Bách khoa Hà Nội.
+                  Research logs, computing journeys, and postgraduate studies experiences at HUST, KAIST & NTU.
                 </p>
               </div>
 
@@ -141,7 +141,7 @@ export default function AcademicBlog() {
                         : "text-slate-500 hover:text-slate-950"
                     }`}
                   >
-                    {cat === "All" ? "Tất cả" : cat}
+                    {cat === "All" ? "All" : cat}
                   </button>
                 ))}
               </div>
@@ -182,7 +182,7 @@ export default function AcademicBlog() {
                       {/* Tags */}
                       <div className="flex gap-1 overflow-hidden max-w-[70%]">
                         {post.tags.slice(0, 2).map((tag, idx) => (
-                          <span key={idx} className="text-[9px] text-slate-400 font-mono flex items-center gap-0.5 whitespace-nowrap">
+                           <span key={idx} className="text-[9px] text-slate-400 font-mono flex items-center gap-0.5 whitespace-nowrap">
                             #{tag.replace(" ", "")}
                           </span>
                         ))}
@@ -193,7 +193,7 @@ export default function AcademicBlog() {
                         onClick={() => setSelectedPost(post)}
                         className="text-xs font-mono font-semibold text-blue-600 hover:text-blue-800 shrink-0 flex items-center gap-0.5"
                       >
-                        Đọc bài viết ➜
+                        Read post ➜
                       </button>
                     </div>
                   </div>
@@ -203,7 +203,7 @@ export default function AcademicBlog() {
 
             {filteredPosts.length === 0 && (
               <div className="text-center py-12 text-xs font-mono text-slate-400">
-                Chưa có bài viết blog nào cho danh mục '{activeCategory}'.
+                No blog posts available in category '{activeCategory}'.
               </div>
             )}
           </motion.div>
@@ -223,7 +223,7 @@ export default function AcademicBlog() {
                 onClick={() => setSelectedPost(null)}
                 className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-slate-500 hover:text-slate-800 transition-colors"
               >
-                <ArrowLeft className="w-4 h-4" /> TRỞ LẠI DANH SÁCH BLOG
+                <ArrowLeft className="w-4 h-4" /> BACK TO BLOGS
               </button>
               
               <div className="flex items-center gap-2">
@@ -243,9 +243,9 @@ export default function AcademicBlog() {
                 </h2>
                 
                 <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs font-mono text-slate-400 pt-2 border-y border-slate-50 py-2.5">
-                  <span className="flex items-center gap-1 text-slate-500"><User className="w-3.5 h-3.5" /> Bởi Van-Son Dinh</span>
-                  <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> Thời gian đọc: {selectedPost.readTime}</span>
-                  <span className="flex items-center gap-1"><MessageSquare className="w-3.5 h-3.5" /> {getPostCommentsCount(selectedPost.id)} Thảo luận</span>
+                  <span className="flex items-center gap-1 text-slate-500"><User className="w-3.5 h-3.5" /> By {profileData.name}</span>
+                  <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> Read Time: {selectedPost.readTime}</span>
+                  <span className="flex items-center gap-1"><MessageSquare className="w-3.5 h-3.5" /> {getPostCommentsCount(selectedPost.id)} Discussions</span>
                 </div>
               </div>
 
@@ -260,7 +260,7 @@ export default function AcademicBlog() {
 
               {/* Summary lead quotation */}
               <div className="p-4 bg-blue-50 border-l-4 border-blue-600 rounded-r-xl italic text-slate-700 text-xs md:text-sm pl-4 leading-relaxed">
-                <strong>Tóm lược: </strong> {selectedPost.summary}
+                <strong>Summary: </strong> {selectedPost.summary}
               </div>
 
               {/* Core Content paragraphs */}
@@ -277,13 +277,13 @@ export default function AcademicBlog() {
             {/* Real Comments Section */}
             <div className="max-w-3xl mx-auto pt-10 border-t border-slate-200">
               <h4 className="text-lg font-display font-semibold text-slate-950 flex items-center gap-2 mb-6">
-                <MessageSquare className="w-5 h-5 text-blue-600" /> Thảo luận từ bạn đọc ({getPostCommentsCount(selectedPost.id)})
+                <MessageSquare className="w-5 h-5 text-blue-600" /> Discussion Board ({getPostCommentsCount(selectedPost.id)})
               </h4>
 
               {/* Write Comment Form */}
               <form onSubmit={handlePostComment} className="bg-slate-50/80 p-5 rounded-2xl border border-slate-150 space-y-3 mb-8">
                 <div className="text-xs font-mono font-bold text-slate-500 uppercase flex items-center gap-1">
-                  <Sparkles className="w-3.5 h-3.5 text-blue-500" /> Gửi phản hồi hoặc đặt câu hỏi khoa học:
+                  <Sparkles className="w-3.5 h-3.5 text-blue-500" /> Submit feedback or raise scientific inquiries:
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -291,7 +291,7 @@ export default function AcademicBlog() {
                     id="input-comment-author"
                     type="text"
                     required
-                    placeholder="Họ và tên của bạn *"
+                    placeholder="Your Full Name *"
                     value={newCommentAuthor}
                     onChange={(e) => setNewCommentAuthor(e.target.value)}
                     className="bg-white border border-slate-250 rounded-xl px-3.5 py-2 text-xs focus:outline-none focus:border-blue-500 transition-colors"
@@ -300,7 +300,7 @@ export default function AcademicBlog() {
                   <input
                     id="input-comment-email"
                     type="email"
-                    placeholder="Địa chỉ Email (Không bắt buộc)"
+                    placeholder="Email Address (Optional)"
                     value={newCommentEmail}
                     onChange={(e) => setNewCommentEmail(e.target.value)}
                     className="bg-white border border-slate-250 rounded-xl px-3.5 py-2 text-xs focus:outline-none focus:border-blue-500 transition-colors"
@@ -310,7 +310,7 @@ export default function AcademicBlog() {
                 <textarea
                   id="textarea-comment-text"
                   required
-                  placeholder="Ý kiến thảo luận, lời cổ vũ, hoặc câu hỏi khoa học của bạn dành cho Sơn... *"
+                  placeholder="Your scientific comments, encouragement, or inquiries for Son... *"
                   value={newCommentText}
                   onChange={(e) => setNewCommentText(e.target.value)}
                   className="bg-white border border-slate-250 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-blue-500 min-h-[70px] w-full resize-y transition-colors"
@@ -322,7 +322,7 @@ export default function AcademicBlog() {
                     type="submit"
                     className="inline-flex items-center gap-1.5 text-xs bg-slate-950 hover:bg-slate-900 text-white font-semibold px-4 py-2 rounded-xl transition-colors shadow-xs"
                   >
-                    Gửi thảo luận <Send className="w-3 h-3" />
+                    Submit Discussion <Send className="w-3 h-3" />
                   </button>
                 </div>
               </form>
@@ -331,7 +331,7 @@ export default function AcademicBlog() {
               <div className="space-y-4">
                 {comments.filter(c => c.postId === selectedPost.id).length === 0 ? (
                   <div className="text-center py-6 text-xs font-mono text-slate-400">
-                    Chưa có bình luận nào cho bài viết này. Hãy là người đầu tiên trao đổi!
+                    No comments yet. Be the first to start a conversation!
                   </div>
                 ) : (
                   comments

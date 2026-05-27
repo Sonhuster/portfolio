@@ -32,14 +32,14 @@ export default function ResearchInterest() {
           <Dna className="w-3.5 h-3.5" /> RESEARCH PASSIONS & PROJECTS
         </span>
         <p className="text-slate-500 text-xs md:text-sm mt-1">
-          Các lĩnh vực nghiên cứu chuyên môn và chiến dịch khoa học đang theo đuổi.
+          Core specialized research fields and active academic endeavors.
         </p>
       </div>
 
       {/* Main Interests Group */}
       <div className="bg-white rounded-2xl border border-[#e9ecef] p-6 shadow-xs space-y-4">
         <h4 className="text-xs font-semibold tracking-wider uppercase text-slate-400 font-mono tracking-widest">
-          Lĩnh vực chuyên môn ưu tiên (Core Focus Areas)
+          Core Focus Areas (Research Specializations)
         </h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {profileData.interests.map((interest, i) => (
@@ -59,7 +59,7 @@ export default function ResearchInterest() {
       {/* Ongoing Projects Section */}
       <div className="space-y-4">
         <h4 className="text-xs font-semibold tracking-wider uppercase text-slate-400 font-mono tracking-widest flex items-center gap-1.5">
-          <Sparkles className="w-4 h-4 text-amber-500" /> Các dự án & đề tài nghiên cứu chi tiết
+          <Sparkles className="w-4 h-4 text-amber-500" /> Detailed Projects & Research Fields
         </h4>
 
         <div className="space-y-4">
@@ -84,7 +84,7 @@ export default function ResearchInterest() {
                             ? "bg-sky-50 text-sky-700 border border-sky-100"
                             : "bg-emerald-50 text-emerald-700 border border-emerald-100"
                       }`}>
-                        {project.status === "In Review" ? "ĐANG PHẢN BIỆN (IN REVIEW)" : project.status === "In Progress" ? "ĐANG THỰC HIỆN" : "ĐÃ HOÀN THÀNH"}
+                        {project.status === "In Review" ? "UNDER REVIEW" : project.status === "In Progress" ? "IN PROGRESS" : "COMPLETED"}
                       </span>
                       <span className="text-[10px] font-mono text-slate-400">/{project.id.toUpperCase()}</span>
                     </div>
@@ -111,7 +111,7 @@ export default function ResearchInterest() {
                       <div className="p-5 md:p-6 border-t border-slate-100 bg-slate-50/20 space-y-5 text-slate-700">
                         {/* Abstract */}
                         <div className="space-y-1.5">
-                          <h6 className="text-[10px] font-bold text-slate-400 font-mono tracking-wider uppercase">Tóm tắt nghiên cứu (Abstract)</h6>
+                          <h6 className="text-[10px] font-bold text-slate-400 font-mono tracking-wider uppercase">Research Abstract</h6>
                           <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-sans">
                             {project.abstract}
                           </p>
@@ -122,7 +122,7 @@ export default function ResearchInterest() {
                           {/* Methodology */}
                           <div className="space-y-3">
                             <h6 className="text-[10px] font-bold text-blue-600 font-mono tracking-wider uppercase flex items-center gap-1">
-                              <FlaskConical className="w-3.5 h-3.5" /> Quy trình & Phương pháp (Methodology)
+                              <FlaskConical className="w-3.5 h-3.5" /> Methodology & Procedures
                             </h6>
                             <ul className="space-y-2">
                               {project.methodology.map((meth, mIdx) => (
@@ -139,7 +139,7 @@ export default function ResearchInterest() {
                           {/* Key Findings */}
                           <div className="space-y-3">
                             <h6 className="text-[10px] font-bold text-indigo-600 font-mono tracking-wider uppercase flex items-center gap-1">
-                              <CheckCircle2 className="w-3.5 h-3.5" /> Kết quả mấu chốt (Key Findings)
+                              <CheckCircle2 className="w-3.5 h-3.5" /> Key Findings
                             </h6>
                             <ul className="space-y-2">
                               {project.keyFindings.map((find, fIdx) => (
@@ -156,11 +156,11 @@ export default function ResearchInterest() {
                         {project.publication && (
                           <div className="p-3.5 bg-blue-50/40 rounded-lg border border-blue-100/60 text-xs flex flex-wrap gap-2 justify-between items-center">
                             <div>
-                              <span className="text-[9px] font-mono font-bold text-blue-500 uppercase block">CÔNG BỐ LIÊN QUAN</span>
+                              <span className="text-[9px] font-mono font-bold text-blue-500 uppercase block">RELATED PUBLICATION</span>
                               <span className="font-semibold text-slate-800 font-sans">{project.publication.journal}</span>
                             </div>
                             <div className="text-[10px] text-right text-slate-500 font-mono">
-                              Tác giả: {project.publication.authors}
+                              Authors: {project.publication.authors}
                             </div>
                           </div>
                         )}

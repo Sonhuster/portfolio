@@ -16,7 +16,7 @@ export default function Philosophy() {
             <BookOpen className="w-3.5 h-3.5" /> Philosophy & Perspective
           </span>
           <p className="text-slate-500 text-xs md:text-sm mt-1">
-            Cách thức Sơn định vị bản thân giữa các biến số thực nghiệm và cuộc sống thường nhật.
+            How Son navigates individual perspectives between physical variables and everyday life.
           </p>
         </div>
 
@@ -101,7 +101,7 @@ export default function Philosophy() {
 
               {/* Interpretation Commentary */}
               <div className="border-t border-slate-200/60 pt-6">
-                <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-600 mb-2">Lời tự sự giải nghĩa</div>
+                <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-600 mb-2">Personal Interpretation</div>
                 <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
                   {philosophies[selectedIdx].content}
                 </p>
