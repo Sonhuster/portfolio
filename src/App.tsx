@@ -58,56 +58,56 @@ export default function App() {
     subtitle: string;
     description: string;
     image: string;
-    vibe: string;
+    // vibe: string;
   }> = {
     "education": {
-      title: "Học Vấn & Quá Trình Đào Tạo",
+      title: "Be a man : )",
       subtitle: "Academic Journey & Background",
-      description: "Hành trình đèn sách tích lũy tri thức, nghiên cứu cơ chất cơ học và khoa học ứng dụng chính quy.",
+      description: "Just store my stuffs.",
       image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1200&auto=format&fit=crop",
-      vibe: "Nghiêm Túc & Hàn Lâm 🎓"
+      // vibe: "Nghiêm Túc & Hàn Lâm 🎓"
     },
     "research-interests": {
-      title: "Lĩnh Vực Nghiên Cứu Chuyên Sâu",
-      subtitle: "Primary Scientific Pursuits",
-      description: "Tìm tòi thế giới vật lý thông qua các mô hình toán học giải giải tích, CFD phức tạp và cơ học lý thuyết.",
+      title: "Primary Scientific Pursuits",
+      subtitle: "To be continued",
+      description: "...",
       image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=1200&auto=format&fit=crop",
-      vibe: "Sâu Sắc & Logic 🧬"
+      // vibe: "Sâu Sắc & Logic 🧬"
     },
     "publications": {
-      title: "Mốc Thống Kê & Thành Tựu Đạt Được",
-      subtitle: "Scholarly Milestones & Achievements",
-      description: "Tổng hợp công trình xuất sắc, đề tài, tài liệu cùng các nghiên cứu hàn lâm có sức nặng.",
+      title: "Scholarly Milestones & Achievements",
+      subtitle: "To be continued",
+      description: "...",
       image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1200&auto=format&fit=crop",
-      vibe: "Khắt Khe & Đầy Giá Trị 📜"
+      // vibe: "Khắt Khe & Đầy Giá Trị 📜"
     },
     "philosophy": {
-      title: "Tư Duy, Chiêm Nghiệm & Góc Nhìn Sống",
-      subtitle: "Personal Perspectives & Lifespan",
-      description: "Chia sẻ hệ giá trị nhân sinh quan, tư tưởng sống tử tế và những suy ngẫm sâu sắc về cuộc đời.",
+      title: "Personal Perspectives & Lifespan",
+      subtitle: "To be continued",
+      description: "...",
       image: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=1200&auto=format&fit=crop",
-      vibe: "Suy Tư & Điềm Tĩnh 🧘‍♂️"
+      // vibe: "Suy Tư & Điềm Tĩnh 🧘‍♂️"
     },
     "lab-simulator": {
-      title: "Phòng Thực Nghiệm Khoa Học Vui",
-      subtitle: "Interactive Engineering Laboratory",
-      description: "Bộ giả lập mô phỏng động, giúp hình ảnh hóa các định lý phân tích kết cấu và dòng chảy cơ học.",
+      title: "Fun Laboratory & Engineer daily",
+      subtitle: "To be continued",
+      description: "...",
       image: "https://images.unsplash.com/photo-1617791160536-598cf32026fb?q=80&w=1200&auto=format&fit=crop",
-      vibe: "Đầy Đam Mê & Nerd ⚡"
+      // vibe: "Đầy Đam Mê & Nerd ⚡"
     },
     "memories": {
-      title: "Ký Ức Đời Thường & Trải Nghiệm Cá Nhân",
-      subtitle: "Cozy Log & Daily Adventures",
-      description: "Góc giản dị chứa đựng niềm vui đời thường: Trà, bánh, game và những phút giây ấm áp vui vẻ.",
+      title: "man's daily",
+      subtitle: "To be continued",
+      description: "...",
       image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=1200&auto=format&fit=crop",
-      vibe: "Ấm Áp & Dễ Thương 🐾☕"
+      // vibe: "Ấm Áp & Dễ Thương 🐾☕"
     },
     "blog": {
-      title: "Tạp Bút, Nhật Ký Học Thuật & Đời Sống",
-      subtitle: "Scholarly & Experiential Blog posts",
-      description: "Nơi tự sự về những câu chuyện cuộc sống, hành trình làm thạc sĩ đầy thử thách và bài học thực tiễn.",
+      title: "Blogs",
+      subtitle: "To be continued",
+      description: "...",
       image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1200&auto=format&fit=crop",
-      vibe: "Phản Chiếu & Tự Sự ✍️"
+      // vibe: "Phản Chiếu & Tự Sự ✍️"
     }
   };
 
@@ -352,10 +352,10 @@ export default function App() {
           </div>
 
           {/* Vibe Status Indicator Badge */}
-          <div className="absolute bottom-4 right-4 md:bottom-6 md:right-8 bg-slate-950/80 backdrop-blur-md text-[9px] md:text-[11px] font-mono text-white border border-slate-800 px-3 py-1.5 rounded-full flex items-center gap-2 select-none shadow-lg tracking-wide">
+          {/* <div className="absolute bottom-4 right-4 md:bottom-6 md:right-8 bg-slate-950/80 backdrop-blur-md text-[9px] md:text-[11px] font-mono text-white border border-slate-800 px-3 py-1.5 rounded-full flex items-center gap-2 select-none shadow-lg tracking-wide">
             <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             Vibe: <span className="font-bold text-blue-300 uppercase">{activeBanner.vibe}</span>
-          </div>
+          </div> */}
         </div>
 
         {/* Content Section Padding */}
