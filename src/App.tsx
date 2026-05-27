@@ -29,6 +29,18 @@ import {
 } from "lucide-react";
 import { profileData } from "./data";
 
+// Helper to calculate age dynamically based on a birthDate
+function calculateAge(birthDateString: string): number {
+  const today = new Date();
+  const birthDate = new Date(birthDateString);
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const monthDiff = today.getMonth() - birthDate.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+}
+
 export default function App() {
   const [activeNav, setActiveNav] = useState("education");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -170,7 +182,7 @@ export default function App() {
 
           <div className="flex items-center justify-between border-t border-slate-800/60 pt-3">
             <span className="inline-flex items-center gap-1 bg-slate-900 text-blue-400 text-[9px] font-mono px-2.5 py-0.5 rounded-full border border-[#162131] font-bold">
-              MSc of Engineering '26
+              MSc of Engineering '{calculateAge("2001-10-16")}
             </span>
           </div>
         </div>
