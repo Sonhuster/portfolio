@@ -191,9 +191,6 @@ export default function Education() {
             <h4 className="text-xl md:text-2.5xl font-display font-black text-[#1e293b] tracking-tight">
               Experiences
             </h4>
-            <p className="text-slate-500 text-xs md:text-sm mt-0.5">
-              Hành trình cống hiến thực tế tại các dự án quốc tế, phòng nghiên cứu hàn lâm và doanh nghiệp hàng đầu.
-            </p>
           </div>
 
           {/* Modern Filter Toggles */}

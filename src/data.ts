@@ -286,11 +286,11 @@ export const workExperiences: ExperienceItem[] = [
     role: "Junior Developer Engineer",
     organization: "AKSELOS",
     location: "Ho Chi Minh City, Vietnam",
-    period: "Dec 2024 – Present",
+    period: "Dec 2024 – Jan 2026",
     tasks: [
-      "Nghiên cứu cơ sở toán học của các thuật toán tối ưu hóa và học máy (Gaussian Process Regression (GPR), Bayesian, thuật toán di truyền và gradient-free).",
-      "Xây dựng công cụ và phát triển mã nguồn tính toán số phân tích cơ chất nhiệt động học.",
-      "Dự án giám sát thời gian thực hệ thống SMR (Steam Methane Reforming): Lập trình bộ tính toán đặc tính nhiệt động lực học hỗn hơp khí và phân tích truyền nhiệt bức xạ."
+      "Working on reduced combustion & heat transfer model for Real-Time Monitoring of Steam Methane Reforming System.",
+      "Applied Gaussian Process Regression (GPR), Genetic, and Gradient-free algorithms on black-box optimization problems.",
+      "Research on thermodynamic models and properties of gas mixtures."
     ],
     projects: [
       {
@@ -310,9 +310,9 @@ export const workExperiences: ExperienceItem[] = [
     period: "Feb 2024 – Sep 2024",
     advisor: "Assoc. Prof. Sang-Bong LEE",
     tasks: [
-      "Khảo sát nâng cao các bộ giải Riemann (Riemann solvers) và mô hình hóa dòng hỗn loạn nhiễu cho phương pháp thể tích hữu hạn (FVM).",
-      "Nghiên cứu lập trình tính toán hiệu năng cao song song hóa thuật toán số bằng OpenMPI trên mạng lưới trực giao.",
-      "Tham gia trực tiếp dự án mô phỏng số khí động cánh quạt trực thăng (Helicopter Flow Simulation), tinh chỉnh bộ hạn chế độ dốc Van Albada chống dao động áp suất giả mạo."
+      "Developed convective and high-fidelity spatial limiter schemes in C language for compressible flow code.",
+      "Implemented explicit Spalart-Allmaras turbulent model for helicopter research projects.",
+      "Parallelized Cartesian solver using MPI for high-computing simulation."
     ]
   },
   {
@@ -322,9 +322,10 @@ export const workExperiences: ExperienceItem[] = [
     period: "Sep 2022 – Dec 2023",
     advisor: "Ph. D Cong-Truong DINH",
     tasks: [
-      "Tổ chức nhóm sinh viên thực hiện đề tài phân tích mô phỏng động dòng khí nén xoáy tua-bin máy nén.",
-      "Thiết kế CAD, dựng lưới hình học phức tạp phục vụ trực tiếp bài toán tính toán cơ chất dòng động cơ phản lực.",
-      "Dự án tối ưu hóa hiệu quả khí động tản nhiệt bầu hút gió cho EDF và tối ưu hệ số khí động cánh tên lửa tự dẫn."
+      "Organized FUN LAB activities :)",
+      "Specialized in multiblock hexa mesh generator for turbomachinery using NUMECA and ANSYS software.",
+      "Conducted research on tip and secondary vortices in rotating flow to enhance system performance and heat transfer capabilities.",
+      "Synthesize and translate documents of Aircraft Propeller."
     ]
   },
   {
@@ -334,8 +335,9 @@ export const workExperiences: ExperienceItem[] = [
     period: "June 2021 – Sep 2022",
     advisor: "Assoc. Prof. Van-Sang PHAM",
     tasks: [
-      "Mô phỏng đa vật lý (multi-physics) biểu diễn ứng xử cơ nhiệt của vật liệu cấu kiện đàn hồi.",
-      "Dự án 'Thiết kế & Chế tạo đầu dò siêu âm dưới nước (UUT)': Dựng mô hình liên hợp áp điện (piezoelectric model) và chạy mô phỏng FEM phân tích dao động, âm học."
+      "Start exploring numerical simulation & fluid mechanics.",
+      "Conducted research on numerical simulation for missile control wing optimization in three flow stages.",
+      "Project: Design & Simulation of an Underwater Ultrasonic Transducer (UUT): Building a piezoelectric model and running FEM simulations for vibration and acoustic analysis."
     ]
   },
   {
@@ -344,8 +346,8 @@ export const workExperiences: ExperienceItem[] = [
     location: "Hanoi, Vietnam",
     period: "Sep 2022 – Apr 2023",
     tasks: [
-      "Hỗ trợ giảng dạy, biên dịch tài liệu học tập giáo trình môn 'Chân vịt dòng khí cánh quạt (Aircraft propeller)' cho sinh viên chuyên ngành.",
-      "Làm sinh viên Buddy trực tiếp hỗ trợ kỹ thuật cho một sinh viên trao đổi từ Đại học Niigata (Nhật Bản) hoàn thành khóa luận tốt nghiệp về thiết kế eVTOL khí động dọc."
+      "Assisting in teaching and synthesizing learning materials for the course 'Aircraft Propellers'.",
+      "Buddy student, supported an exchange student from Niigata University, Japan in completing a thesis  on Electric Vertical Take-off and Landing (eVTOL)"
     ]
   }
 ];
