@@ -78,7 +78,7 @@ export default function ResearchInterest() {
                   <div className="space-y-1.5 flex-1">
                     <div className="flex items-center gap-2 flex-wrap">
                       <span className={`px-2.5 py-0.5 rounded-full text-[9px] font-mono font-bold uppercase tracking-wider ${
-                        project.status === "Completed" 
+                        project.status === "In Review" 
                           ? "bg-amber-50 text-amber-700 border border-amber-100" 
                           : project.status === "In Progress"
                             ? "bg-sky-50 text-sky-700 border border-sky-100"
