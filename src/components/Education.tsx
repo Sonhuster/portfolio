@@ -59,7 +59,7 @@ export default function Education() {
               {/* Radial retro grid/glow border around avatar */}
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full blur-[2px] opacity-75 group-hover:opacity-100 transition-opacity" />
               <img 
-                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=120&h=120" 
+                src="https://drive.google.com/file/d/1eUV8sm47mwtZpNWT-b_xbwLaIod9mk-R/view?usp=sharing" 
                 alt="Van-Son Dinh" 
                 className="relative w-16 h-16 rounded-full object-cover border-2 border-white shadow-sm"
                 referrerPolicy="no-referrer"
