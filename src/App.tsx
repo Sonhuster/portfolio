@@ -164,7 +164,7 @@ export default function App() {
             <div className="relative group flex-shrink-0">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full blur-xs opacity-70 group-hover:opacity-100 transition duration-300 animate-pulse" />
               <img 
-                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=128&h=128" 
+                src="/publics/Zoe.webp" 
                 alt="Van-Son Dinh" 
                 className="relative w-12 h-12 rounded-full object-cover border-2 border-slate-900 shadow-md"
                 referrerPolicy="no-referrer"
@@ -241,7 +241,7 @@ export default function App() {
       <header className="md:hidden sticky top-0 z-40 bg-[#070b13] border-b border-[#162131] h-16 px-4 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
           <img 
-            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=128&h=128" 
+            src="/publics/Zoe.webp" 
             alt="Van-Son Dinh"
             className="w-8 h-8 rounded-full object-cover border border-blue-500/40"
             referrerPolicy="no-referrer"
@@ -278,7 +278,7 @@ export default function App() {
           <div className="flex items-center justify-between border-b border-[#162131] pb-4">
             <div className="flex items-center gap-2.5">
               <img 
-                src="../publics/Zoe.webp"
+                src="/publics/Zoe.webp"
                 alt="Van-Son Dinh"
                 className="w-8 h-8 rounded-full object-cover border border-blue-500/40"
                 referrerPolicy="no-referrer"
