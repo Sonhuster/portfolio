@@ -20,7 +20,7 @@ export const profileData = {
   department: "Institute of Applied Mechanics",
   email: "sondv.hust@gmail.com",
   location: "Dien Chau, Nghe An, Vietnam",
-  avatarUrl: `${(import.meta as any).env.BASE_URL}Zoe.webp`,
+  avatarUrl: `${(import.meta as any).env.BASE_URL}Zoe.jpg`,
   bio: "Math, Computing Engineering, Programming, Games, and Minimalist",
   interests: [
     "Numerical Methods & CFD",
