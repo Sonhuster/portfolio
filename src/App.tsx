@@ -278,7 +278,7 @@ export default function App() {
           <div className="flex items-center justify-between border-b border-[#162131] pb-4">
             <div className="flex items-center gap-2.5">
               <img 
-                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=128&h=128" 
+                src="../publics/Zoe.webp"
                 alt="Van-Son Dinh"
                 className="w-8 h-8 rounded-full object-cover border border-blue-500/40"
                 referrerPolicy="no-referrer"

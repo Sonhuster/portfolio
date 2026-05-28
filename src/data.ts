@@ -20,7 +20,7 @@ export const profileData = {
   department: "Institute of Applied Mechanics",
   email: "sondv.hust@gmail.com",
   location: "Dien Chau, Nghe An, Vietnam",
-  avatarUrl: "https://drive.google.com/file/d/1eUV8sm47mwtZpNWT-b_xbwLaIod9mk-R/view?usp=sharing",
+  avatarUrl: "../publics/Zoe.webp",
   bio: "Math, Computing Engineering, Programming, Games, and Minimalist",
   interests: [
     "Numerical Methods & CFD",
