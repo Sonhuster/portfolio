@@ -100,31 +100,37 @@ export default function Publication() {
                 </div>
               ))}
 
-              {/* Added a mock seminar since stats indicate 'Papers & Seminars: 3' */}
+              {/* Conference Paper */}
               <div className="p-4 bg-slate-50/50 hover:bg-slate-50 border border-slate-200/80 rounded-xl space-y-3 transition-colors">
                 <div className="flex justify-between items-start gap-4">
                   <span className="px-2 py-0.5 bg-indigo-50 text-indigo-700 font-mono text-[9px] bold uppercase rounded border border-indigo-150">
-                    CONFERENCE PRESENTATION
+                    CONFERENCE PAPER
                   </span>
                   <span className="text-[11px] font-mono text-slate-400">#02</span>
                 </div>
 
                 <div className="space-y-1">
                   <h5 className="font-display font-semibold text-xs md:text-sm text-slate-900 leading-snug">
-                    "Optimization of catalytic degradation of polyethylene terephthalate via point mutation identification of HL-PET1 enzyme"
+                    "Design and Construction for Computational Models of Ultrasonic Transducers"
                   </h5>
-                  <p className="text-[11px] text-slate-500 font-mono italic">AI-assisted optimization of environmental plastic degradation enzymes</p>
+                  <p className="text-[11px] text-slate-500 font-mono italic">Regional Conference in Mechanical Manufacturing Engineering, 1042-1063</p>
                 </div>
 
                 <div className="border-t border-slate-100 pt-2.5 space-y-1 text-[11px] font-sans text-slate-600">
                   <div>
-                    <strong className="text-slate-700">Presenter:</strong> Van-Son Dinh
+                    <strong className="text-slate-700">Authors:</strong> AD Truong, VS Dinh, VS Pham, MT Ha
                   </div>
                   <div>
-                    <strong className="text-slate-700">Seminar:</strong> HUST Young Scientists Conference on Biology & Biotechnology
+                    <strong className="text-slate-700">Conference:</strong> Regional Conference in Mechanical Manufacturing Engineering
                   </div>
                   <div>
-                    <strong className="text-slate-705">Location:</strong> Seminar Hall C1-203, HUST
+                    <strong className="text-slate-700">Pages:</strong> 1042-1063
+                  </div>
+                  <div>
+                    <strong className="text-slate-700">Status:</strong>{" "}
+                    <span className="inline-flex items-center px-1.5 py-0.2 rounded font-mono font-semibold text-emerald-700 bg-emerald-50">
+                      Published
+                    </span>
                   </div>
                 </div>
               </div>
