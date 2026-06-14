@@ -70,14 +70,32 @@ export default function Publication() {
                       <strong className="text-slate-700">Journal:</strong> <span className="text-blue-600 font-medium">{pub.publication?.journal}</span>
                     </div>
                     <div>
-                      <strong className="text-slate-700">Status:</strong> <span className="inline-flex items-center text-amber-600 bg-amber-50 px-1.5 py-0.2 rounded font-mono font-semibold">Editing / Under Review (In Review)</span>
+                      <strong className="text-slate-700">Status:</strong>{" "}
+                      <span className={`inline-flex items-center px-1.5 py-0.2 rounded font-mono font-semibold ${
+                        pub.status === "Completed"
+                          ? "text-emerald-700 bg-emerald-50"
+                          : "text-amber-600 bg-amber-50"
+                      }`}>
+                        {pub.status === "Completed" ? "Completed / Published" : "Editing / Under Review"}
+                      </span>
                     </div>
                   </div>
 
                   <div className="flex justify-end pt-2 border-t border-slate-100/50">
-                    <span className="inline-flex items-center gap-1 text-[10px] text-slate-400 font-mono select-none">
-                      DOI: Pending publication <ArrowUpRight className="w-3.5 h-3.5 text-slate-300" />
-                    </span>
+                    {pub.publication?.doi ? (
+                      <a 
+                        href={`https://doi.org/${pub.publication.doi}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-[10px] text-blue-600 hover:text-blue-800 font-mono transition-colors"
+                      >
+                        DOI: {pub.publication.doi} <ExternalLink className="w-3.5 h-3.5 text-blue-500" />
+                      </a>
+                    ) : (
+                      <span className="inline-flex items-center gap-1 text-[10px] text-slate-400 font-mono select-none">
+                        DOI: Pending publication <ArrowUpRight className="w-3.5 h-3.5 text-slate-300" />
+                      </span>
+                    )}
                   </div>
                 </div>
               ))}
