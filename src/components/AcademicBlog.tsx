@@ -48,20 +48,6 @@ export default function AcademicBlog() {
     } else {
       // Default initial mock comments for authenticity
       const initialComments: Comment[] = [
-        {
-          postId: "blog1",
-          author: "Linh Thuy Nguyen",
-          email: "linhnt@hust.edu.vn",
-          text: "This is deeply touching and incredibly realistic, Son! I am also in my final year of Master's study and often feel discouraged. Reading your reflections on laboratory companionship brings warmth to my heart.",
-          timestamp: "May 23, 2026 - 10:20"
-        },
-        {
-          postId: "blog2",
-          author: "HUST Advisor K19",
-          email: "linh.hp@hust.edu.vn",
-          text: "Excellent dedication! Bridging computational fluid dynamics and wet lab validations is the future of modern engineering. Wishing you high marks on your Master's thesis and successful upcoming journal publications.",
-          timestamp: "May 23, 2026 - 14:15"
-        }
       ];
       setComments(initialComments);
       localStorage.setItem("hust-scientist-blog-comments", JSON.stringify(initialComments));
