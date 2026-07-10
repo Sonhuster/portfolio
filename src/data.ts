@@ -51,12 +51,6 @@ export const achievements: Achievement[] = [
     description: "Prestigious scholarship awarded to outstanding Vietnamese students with exceptional academic and research performances (Rencontres du Vietnam)."
   },
   {
-    year: "2023",
-    title: "Outstanding Graduate Thesis (Rank 1st Class)",
-    organization: "Hanoi University of Science and Technology",
-    description: "Graduated as the Valedictorian of the Aerospace Engineering class. Thesis project scored 9.45/10, ranking 1st in the Aerospace discipline."
-  },
-  {
     year: "2019 - 2021",
     title: "Scholarships for Excellent Students of HUST",
     organization: "Hanoi University of Science and Technology",
