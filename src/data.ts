@@ -226,7 +226,13 @@ export const blogPosts: BlogPost[] = [
         src: `${baseUrl}Zoe.jpg`,
         alt: "Portrait of Zoe",
         caption: "A personal memory captured during the academic journey.",
-        style: { width: "50%", height: "auto" }
+          style: { 
+          width: "50%", 
+          height: "auto",
+          display: "block",      // Changes the image from inline to block layout
+          marginLeft: "auto",    // Automatically calculates left spacing
+          marginRight: "auto"    // Automatically calculates right spacing
+        }
       },
       "The solid foundational mechanics gained during sleepless nights analyzing turbomachinery flows at the HUST Propulsion Systems Lab became my greatest leverage. To all fellow researchers: never hesitate to venture outside your comfort zone and witness firsthand how global academic excellence operates."
     ],
