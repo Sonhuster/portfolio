@@ -33,10 +33,16 @@ export const profileData = {
 
 export const achievements: Achievement[] = [
   {
+    year: "2025",
+    title: "Outstanding International Graduate Student Scholarship",
+    organization: "National Taiwan University (NTU)",
+    description: "Full scholarship awarded for the Master's program at NTU."
+  },
+  {
     year: "2024",
-    title: "KAIST Scholarship (Full Scholarship)",
+    title: "KAIST Scholarship",
     organization: "Korea Advanced Institute of Science and Technology",
-    description: "Full scholarship awarded for the Master's program at the Korea Advanced Institute of Science and Technology."
+    description: "Full scholarship awarded for the Master's program at KAIST."
   },
   {
     year: "2023",
