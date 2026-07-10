@@ -182,39 +182,30 @@ export const experiments: Experiment[] = [
 export const memories: Memory[] = [
   {
     id: "m1",
-    title: "A magnificent autumn evening beside KAIST lake",
+    title: "KAIST Life",
     date: "September 14, 2024",
-    description: "Never forgetting those cool, refreshing evenings in Daejeon. After heavy learning and coding sessions at the Aerial Innovative Mobility Lab, we gathered around KAIST's iconic swan-filled lake, diving into deep discussions about the convergence of helicopter aerodynamic solvers.",
-    category: "Lab Fun",
+    description: "Thế kỷ trống - Void Century (to be continued)",
+    category: "Daily Life",
     iconName: "Compass",
     location: "KAIST Campus, Daejeon, South Korea"
   },
   {
     id: "m2",
-    title: "The cluttered coding desk at HUST Propulsion Lab",
+    title: "2025 Life",
     date: "November 10, 2023",
-    description: "A desk covered with turbine aerodynamics research papers and a scratched-up laptop where I wrote my very first block of grid generation code for my Electric Ducted Fan thermal study.",
-    category: "Academic",
+    description: "Thế kỷ trống - Void Century (to be continued)",
+    category: "Daily Life",
     iconName: "ThermometerCheck",
-    location: "Propulsion Systems Lab, HUST, Hanoi"
+    location: "AKSELOS, Ho Chi Minh city, Vietnam"
   },
   {
     id: "m3",
     title: "A long flight to Taipei following new aspirations",
     date: "February 15, 2026",
-    description: "Luggage neatly packed, carrying high hopes of plunging deeper into physical mechanics and applied machine learning at the prestigious Institute of Applied Mechanics, National Taiwan University (NTU). A promising new chapter begins.",
+    description: "GANGGG!",
     category: "Field Trip",
     iconName: "Presentation",
     location: "National Taiwan University, Taipei"
-  },
-  {
-    id: "m4",
-    title: "Full-throttle software engineering at Akselos Saigon",
-    date: "March 25, 2025",
-    description: "Highly energetic work sessions alongside brilliant engineers at Akselos Saigon, examining advanced Gaussian Process Regression (GPR) models to power high-fidelity real-time monitoring of complex industrial chemical reactors.",
-    category: "Daily Life",
-    iconName: "Coffee",
-    location: "Akselos Office, Dist. 1, Ho Chi Minh City"
   }
 ];
 
