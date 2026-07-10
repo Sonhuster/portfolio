@@ -21,7 +21,7 @@ export default function Philosophy() {
         }
 
         return (
-          <figure key={idx} className="flex justify-center">
+          <figure key={idx} className="flex flex-col items-center justify-center">
             <img
               src={item.src}
               alt={item.alt}

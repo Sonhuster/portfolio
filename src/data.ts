@@ -1,4 +1,4 @@
-import { BlogPost, Achievement, ResearchProject, Experiment, Memory, PhilosophyItem, EducationItem } from "./types";
+import { BlogPost, Achievement, ResearchProject, Experiment, Memory, PhilosophyItem, EducationItem, CoreFocusArea } from "./types";
 
 export interface ExperienceItem {
   role: string;
@@ -169,11 +169,103 @@ export const researchProjects: ResearchProject[] = [
   }
 ];
 
+export const coreFocusAreas: CoreFocusArea[] = [
+  {
+    id: "cfd_heat_transfer",
+    title: "Numerical Methods & CFD",
+    description: "Developing and applying high-fidelity numerical solvers, spatial schemas, and conjugate heat transfer (CHT) modeling to solve complex aerothermal and fluid mechanics problems.",
+    iconName: "Cpu",
+    projects: [
+      {
+        id: "proj1",
+        title: "Numerical investigation of an Electric Motor Cooling ability through the Centre Body of an Electric Ducted Fan",
+        subtitle: "Outstanding Graduate Thesis (Valedictorian of Aerospace Engineering, HUST)",
+        abstract: [
+          "A detailed numerical investigation on the thermal dissipation performance of an electric motor integrated inside the hub structure of an axial ducted fan. Developed active flow control techniques to enhance convective heat transfer coefficients under heavy-load conditions, protecting motor coils and improving aerodynamic efficiency."
+        ],
+        methodology: [
+          "Constructed highly refined 3D structured meshes to satisfy conjugate heat transfer (CHT) requirements.",
+          "Conducted extensive Navier-Stokes numerical simulations using an advanced CFD solver.",
+          "Performed validation and verification of numerical results against experimental data at the Propulsion Systems Lab."
+        ],
+        keyFindings: [
+          "Optimized the aerodynamic hub geometry, increasing the convective heat dissipation coefficient by 18.5%.",
+          "Minimized localized separation vortices behind the trailing edge of the motor pod.",
+          "Published a peer-reviewed research paper in the IOP Journal of Physics: Conference Series."
+        ],
+        status: "Completed",
+        publication: {
+          journal: "Journal of Physics: Conference Series (Institute of Physics)",
+          doi: "10.1088/1742-6596/2707/1/012103",
+          authors: "Dinh, V.S., Chu, H.Q., ... Dinh, C.T."
+        }
+      }
+    ]
+  },
+  {
+    id: "fluid_structural_mechanics",
+    title: "Fluid & Structural Mechanics",
+    description: "Investigating fluid-structure interactions, lift-drag aerodynamic characteristics, and structural optimization across subsonic and supersonic flow regimes.",
+    iconName: "Layers",
+    projects: [
+      {
+        id: "proj2",
+        title: "Numerical study on aerodynamic characteristics of the grid fins with different grid patterns",
+        subtitle: "Collaborative research on high-efficiency aerodynamic Grid Fins structures",
+        abstract: [
+          "An investigation and comparison of lift, drag, and trailing vortices of honeycomb-like control mechanisms (Grid Fins) in subsonic and supersonic flow regimes. Evaluated the aerodynamic optimization potential of diamond-patterned cells compared to traditional square cells."
+        ],
+        methodology: [
+          "Configured a CFD meshing domain with extremely small boundary layer spacing (y+ < 1).",
+          "Performed high-performance parallel computing across large angles of attack from 0 to 15 degrees.",
+          "Utilized Q-criterion vortex detection techniques to visualize 3D separation flows."
+        ],
+        keyFindings: [
+          "Identified critical variations in aerodynamic pitching moment and stability among different diamond cell designs.",
+          "Successfully co-authored and published a Q1 research article in Physics of Fluids.",
+          "Contributed valuable design data for the engineering of smart self-guiding aerodynamic mechanisms."
+        ],
+        status: "Completed",
+        publication: {
+          journal: "Physics of Fluids (AIP Publishing, Q1 Journal)",
+          doi: "10.1063/5.0176292",
+          authors: "Dinh, V.S., Dinh, C.T., Pham, V.S."
+        }
+      }
+    ]
+  },
+  {
+    id: "parallel_computing",
+    title: "Parallel Computing & Numerical Schemes",
+    description: "Researching high-resolution advective schemes, Riemann solvers, and multi-block overset grids utilizing OpenMPI to scale parallel solvers on supercomputing clusters.",
+    iconName: "Terminal",
+    projects: [
+      {
+        id: "proj3",
+        title: "Code-based Helicopter Flow Simulation & Numerical Schemes",
+        subtitle: "Major Research Project at KAIST (South Korea)",
+        abstract: [
+          "Research and development of specialized high-fidelity solvers for helicopter aerodynamics. Focused on improving advective schemes such as AUSM and MUSCL for solving Euler/Navier-Stokes equations on Cartesian grids, and optimizing advection slope limiters like Van Albada to suppress non-physical oscillations near high-gradient shear layers."
+        ],
+        methodology: [
+          "Researched Riemann solvers and finite-volume turbulence models.",
+          "Programmed parallelized domain-decomposition solvers using OpenMPI for multiblock overset grid systems.",
+          "Implemented Spalart-Allmaras turbulence models to capture rotating rotor blade interactions."
+        ],
+        keyFindings: [
+          "Improved the predictive accuracy of the tip pressure field during forward helicopter translation.",
+          "Optimized vortex separation prediction boundaries, enhancing aerodynamic rotor wake fidelity by 12%."
+        ],
+        status: "Completed"
+      }
+    ]
+  }
+];
+
 export const experiments: Experiment[] = [
   {
     id: "exp1",
     title: "Aerodynamic Simulation (2D Airfoil CFD Solver)",
-    category: "Dry Lab",
     equipment: ["Web Browser", "Euler Equation Solver Model", "TypeScript Canvas Engine"],
     objective: "Real-time dynamic simulation of pressure distribution and streamlines around a NACA 0012 airfoil at various angles of attack to observe flow separation and stall.",
     steps: [
@@ -182,12 +274,31 @@ export const experiments: Experiment[] = [
       { number: 3, title: "Deconstruct Core Pressure", description: "Extract coefficients of pressure (Cp) along suction and pressure surfaces of the chord using Bernoulli's equation." },
       { number: 4, title: "Visualize Interfacial Streamlines", description: "Render dynamic, color-mapped streamlines in real time. Increase the angle of attack beyond stall thresholds to witness trailing edge separation." }
     ],
-    simulationType: "sequence-alignment"
+    simulationType: "sequence-alignment",
+    content: [
+      "The computational solver computes the velocity fields and pressure distributions over the airfoil sections dynamically. This enables real-time observation of aerodynamics behaviors and streamlines flow transitions.",
+      {
+        type: "image",
+        src: `${baseUrl}Zoe.jpg`,
+        alt: "Aerodynamic Flow Solution Plot",
+        caption: "Figure 1.1: Typical flow streamlines and pressure coefficients mapped on a NACA 0012 airfoil.",
+        style: {
+          width: "100%",
+          maxWidth: "450px",
+          height: "auto",
+          borderRadius: "12px",
+          display: "block",
+          marginLeft: "auto",
+          marginRight: "auto",
+          marginTop: "12px",
+          marginBottom: "12px"
+        }
+      }
+    ]
   },
   {
     id: "exp2",
     title: "Structural Cantilever Integrity (Cantilever Beam FEA Sim)",
-    category: "Dry Lab",
     equipment: ["Finite Element Solver Tool", "Stiffness Matrix Linear Solver", "Deformation Plotting Engine"],
     objective: "Determine Von-Mises stress profiles and physical deflection of a 1D cantilever block under localized tip loading for structural stability assessment.",
     steps: [
@@ -196,7 +307,27 @@ export const experiments: Experiment[] = [
       { number: 3, title: "Global Stiffness Matrix Assemblies", description: "Formulate physical boundary constraints (clamp fixed end at deflection = 0) and establish pointwise loading on the free end." },
       { number: 4, title: "Solve Linear Algebra & Plot Outputs", description: "Solve the linear equation system K * U = F to find joint displacements, yielding stress concentrations and bending moment graphs." }
     ],
-    simulationType: "electrophoresis"
+    simulationType: "electrophoresis",
+    content: [
+      "By utilizing a 1D Euler-Bernoulli cantilever model, the localized loads can be solved to map physical deflection curves and internal bending stresses, ensuring the high integrity of engineered structures.",
+      {
+        type: "image",
+        src: `${baseUrl}Zoe.jpg`,
+        alt: "FEA Structural Deflection Analysis",
+        caption: "Figure 2.1: Von-Mises stress distributions and deformation contour plot of the beam under stress.",
+        style: {
+          width: "100%",
+          maxWidth: "450px",
+          height: "auto",
+          borderRadius: "12px",
+          display: "block",
+          marginLeft: "auto",
+          marginRight: "auto",
+          marginTop: "12px",
+          marginBottom: "12px"
+        }
+      }
+    ]
   }
 ];
 

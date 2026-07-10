@@ -46,7 +46,6 @@ export interface ResearchProject {
 export interface Experiment {
   id: string;
   title: string;
-  category: "Wet Lab" | "Dry Lab";
   equipment: string[];
   objective: string;
   steps: {
@@ -55,6 +54,7 @@ export interface Experiment {
     description: string;
   }[];
   simulationType: "electrophoresis" | "spectroscopy" | "sequence-alignment";
+  content?: RichContentItem[];
 }
 
 export interface Memory {
@@ -85,3 +85,12 @@ export interface EducationItem {
   isCurrent?: boolean;
   type?: "current" | "discontinued" | "completed";
 }
+
+export interface CoreFocusArea {
+  id: string;
+  title: string;
+  description: string;
+  iconName: string;
+  projects: ResearchProject[];
+}
+
