@@ -178,11 +178,30 @@ export default function AcademicBlog() {
 
               {/* Core Content paragraphs */}
               <div className="space-y-4 pt-4 text-slate-700 text-sm md:text-base leading-relaxed font-sans">
-                {selectedPost.content.map((para, idx) => (
-                  <p key={idx} className="indent-0 sm:indent-4">
-                    {para}
-                  </p>
-                ))}
+                {selectedPost.content.map((item, idx) => {
+                  if (typeof item === "string") {
+                    return (
+                      <p key={idx} className="indent-0 sm:indent-4">
+                        {item}
+                      </p>
+                    );
+                  }
+
+                  return (
+                    <figure key={idx} className="my-4">
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        className="w-full rounded-xl border border-slate-200 object-cover shadow-sm"
+                      />
+                      {item.caption && (
+                        <figcaption className="mt-2 text-center text-xs text-slate-500">
+                          {item.caption}
+                        </figcaption>
+                      )}
+                    </figure>
+                  );
+                })}
               </div>
 
             </article>

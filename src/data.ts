@@ -13,6 +13,8 @@ export interface ExperienceItem {
   }[];
 }
 
+const baseUrl = (import.meta as any).env.BASE_URL;
+
 export const profileData = {
   name: "Van-Son Dinh",
   title: "MSc Student in Applied Mechanics",
@@ -20,7 +22,7 @@ export const profileData = {
   department: "Institute of Applied Mechanics",
   email: "sondv.hust@gmail.com",
   location: "Dien Chau, Nghe An, Vietnam",
-  avatarUrl: `${(import.meta as any).env.BASE_URL}Zoe.jpg`,
+  avatarUrl: `${baseUrl}Zoe.jpg`,
   bio: "Math, Computing Engineering, Programming, Games, and Minimalist",
   interests: [
     "Numerical Methods & CFD",
@@ -219,6 +221,12 @@ export const blogPosts: BlogPost[] = [
     summary: "An honest, down-to-earth reflection on pursuing education across leading Asian academic environments, adapting swiftly under intense course workloads, and focusing on practical mechanical research paths.",
     content: [
       "Stepping into KAIST and later continuing at NTU Taiwan, I was exposed to an incredibly intense and rapid academic pace. In contrast to standard curricula revolving around pre-formulated textbook answers, these elite centers expect you to construct unique hypotheses, perform strict benchmarking comparisons, and demonstrate rigorous mathematical proofs.",
+      {
+        type: "image",
+        src: `${baseUrl}Zoe.jpg`,
+        alt: "Portrait of Zoe",
+        caption: "A personal memory captured during the academic journey."
+      },
       "The solid foundational mechanics gained during sleepless nights analyzing turbomachinery flows at the HUST Propulsion Systems Lab became my greatest leverage. To all fellow researchers: never hesitate to venture outside your comfort zone and witness firsthand how global academic excellence operates."
     ],
     tags: ["MastersJourney", "AerospaceEngineering", "KAIST", "NTU", "HUST"]

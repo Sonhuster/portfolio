@@ -1,3 +1,12 @@
+export interface BlogImageContent {
+  type: "image";
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+export type BlogContentItem = string | BlogImageContent;
+
 export interface BlogPost {
   id: string;
   title: string;
@@ -5,7 +14,7 @@ export interface BlogPost {
   category: "Academic" | "Survival Guide" | "Reflection";
   readTime: string;
   summary: string;
-  content: string[];
+  content: BlogContentItem[];
   tags: string[];
 }
 
