@@ -192,7 +192,7 @@ export const memories: Memory[] = [
   {
     id: "m2",
     title: "2025 Life",
-    date: "November 10, 2023",
+    date: "October 16, 2025",
     description: "Thế kỷ trống - Void Century (to be continued)",
     category: "Daily Life",
     iconName: "ThermometerCheck",
