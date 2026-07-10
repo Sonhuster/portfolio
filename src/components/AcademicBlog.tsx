@@ -193,6 +193,7 @@ export default function AcademicBlog() {
                         src={item.src}
                         alt={item.alt}
                         className="w-full rounded-xl border border-slate-200 object-cover shadow-sm"
+                        style={item.style}
                       />
                       {item.caption && (
                         <figcaption className="mt-2 text-center text-xs text-slate-500">

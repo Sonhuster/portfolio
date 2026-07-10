@@ -3,9 +3,12 @@ export interface BlogImageContent {
   src: string;
   alt: string;
   caption?: string;
+  style?: React.CSSProperties;
 }
 
 export type BlogContentItem = string | BlogImageContent;
+
+import type { CSSProperties } from "react";
 
 export interface BlogPost {
   id: string;

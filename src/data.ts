@@ -225,7 +225,8 @@ export const blogPosts: BlogPost[] = [
         type: "image",
         src: `${baseUrl}Zoe.jpg`,
         alt: "Portrait of Zoe",
-        caption: "A personal memory captured during the academic journey."
+        caption: "A personal memory captured during the academic journey.",
+        style: { width: "50%", height: "auto" }
       },
       "The solid foundational mechanics gained during sleepless nights analyzing turbomachinery flows at the HUST Propulsion Systems Lab became my greatest leverage. To all fellow researchers: never hesitate to venture outside your comfort zone and witness firsthand how global academic excellence operates."
     ],
