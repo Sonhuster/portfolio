@@ -67,7 +67,16 @@ export const philosophies: PhilosophyItem[] = [
     vietnameseTitle: "Math is the Absolute Language",
     quote: "The book of nature is written in the language of mathematics.",
     author: "Galileo Galilei",
-    content: "Every mechanical phenomenon, whether it is the drag force on an aircraft wing or the turbulent flow inside a compressor turbine, can be beautifully conceptualized through the Navier-Stokes partial differential equations. Discovering the convergence of a numerical algorithm is the simple daily joy of a computational engineer."
+    content: [
+      "Every mechanical phenomenon, whether it is the drag force on an aircraft wing or the turbulent flow inside a compressor turbine, can be beautifully conceptualized through the Navier-Stokes partial differential equations. Discovering the convergence of a numerical algorithm is the simple daily joy of a computational engineer.",
+      {
+        type: "image",
+        src: `${baseUrl}Zoe.jpg`,
+        alt: "Portrait illustration",
+        caption: "A quiet visual reminder of the human side behind technical work.",
+        style: { width: "100%", maxWidth: "420px", height: "auto" }
+      }
+    ]
   },
   {
     id: "p2",
@@ -75,7 +84,9 @@ export const philosophies: PhilosophyItem[] = [
     vietnameseTitle: "Grounded in Rigor, Driven by Performance",
     quote: "Simplicity is the ultimate sophistication.",
     author: "Leonardo da Vinci",
-    content: "Computational mechanics demands flawless precision. A minor array overflow or grid layout error can completely collapse a multi-million element CFD simulation model after a week of parallel computing on high-performance supercomputing clusters."
+    content: [
+      "Computational mechanics demands flawless precision. A minor array overflow or grid layout error can completely collapse a multi-million element CFD simulation model after a week of parallel computing on high-performance supercomputing clusters."
+    ]
   },
   {
     id: "p3",
@@ -83,7 +94,9 @@ export const philosophies: PhilosophyItem[] = [
     vietnameseTitle: "Computation Belongs to Reality",
     quote: "Essentially, all models are wrong, but some are useful.",
     author: "George E. P. Box",
-    content: "Analytical models, particle simulations, Large Eddy Simulations (LES), or Gaussian Process Regression (GPR) are not just dry lines of code on a terminal screen. They prove their ultimate worth when delivering real-world thermal cooling solutions for electric ducted fans (EDF) or providing real-time diagnostics to optimize the operations of massive industrial chemical reactors."
+    content: [
+      "Analytical models, particle simulations, Large Eddy Simulations (LES), or Gaussian Process Regression (GPR) are not just dry lines of code on a terminal screen. They prove their ultimate worth when delivering real-world thermal cooling solutions for electric ducted fans (EDF) or providing real-time diagnostics to optimize the operations of massive industrial chemical reactors."
+    ]
   }
 ];
 
@@ -92,7 +105,9 @@ export const researchProjects: ResearchProject[] = [
     id: "proj1",
     title: "Numerical investigation of an Electric Motor Cooling ability through the Centre Body of an Electric Ducted Fan",
     subtitle: "Outstanding Graduate Thesis (Valedictorian of Aerospace Engineering, HUST)",
-    abstract: "A detailed numerical investigation on the thermal dissipation performance of an electric motor integrated inside the hub structure of an axial ducted fan. Developed active flow control techniques to enhance convective heat transfer coefficients under heavy-load conditions, protecting motor coils and improving aerodynamic efficiency.",
+    abstract: [
+      "A detailed numerical investigation on the thermal dissipation performance of an electric motor integrated inside the hub structure of an axial ducted fan. Developed active flow control techniques to enhance convective heat transfer coefficients under heavy-load conditions, protecting motor coils and improving aerodynamic efficiency."
+    ],
     methodology: [
       "Constructed highly refined 3D structured meshes to satisfy conjugate heat transfer (CHT) requirements.",
       "Conducted extensive Navier-Stokes numerical simulations using an advanced CFD solver.",
@@ -114,7 +129,9 @@ export const researchProjects: ResearchProject[] = [
     id: "proj2",
     title: "Numerical study on aerodynamic characteristics of the grid fins with different grid patterns",
     subtitle: "Collaborative research on high-efficiency aerodynamic Grid Fins structures",
-    abstract: "An investigation and comparison of lift, drag, and trailing vortices of honeycomb-like control mechanisms (Grid Fins) in subsonic and supersonic flow regimes. Evaluated the aerodynamic optimization potential of diamond-patterned cells compared to traditional square cells.",
+    abstract: [
+      "An investigation and comparison of lift, drag, and trailing vortices of honeycomb-like control mechanisms (Grid Fins) in subsonic and supersonic flow regimes. Evaluated the aerodynamic optimization potential of diamond-patterned cells compared to traditional square cells."
+    ],
     methodology: [
       "Configured a CFD meshing domain with extremely small boundary layer spacing (y+ < 1).",
       "Performed high-performance parallel computing across large angles of attack from 0 to 15 degrees.",
@@ -136,7 +153,9 @@ export const researchProjects: ResearchProject[] = [
     id: "proj3",
     title: "Code-based Helicopter Flow Simulation & Numerical Schemes",
     subtitle: "Major Research Project at KAIST (South Korea)",
-    abstract: "Research and development of specialized high-fidelity solvers for helicopter aerodynamics. Focused on improving advective schemes such as AUSM and MUSCL for solving Euler/Navier-Stokes equations on Cartesian grids, and optimizing advection slope limiters like Van Albada to suppress non-physical oscillations near high-gradient shear layers.",
+    abstract: [
+      "Research and development of specialized high-fidelity solvers for helicopter aerodynamics. Focused on improving advective schemes such as AUSM and MUSCL for solving Euler/Navier-Stokes equations on Cartesian grids, and optimizing advection slope limiters like Van Albada to suppress non-physical oscillations near high-gradient shear layers."
+    ],
     methodology: [
       "Researched Riemann solvers and finite-volume turbulence models.",
       "Programmed parallelized domain-decomposition solvers using OpenMPI for multiblock overset grid systems.",
@@ -186,7 +205,16 @@ export const memories: Memory[] = [
     id: "m1",
     title: "KAIST Life",
     date: "September 14, 2024",
-    description: "Thế kỷ trống - Void Century (to be continued)",
+    description: [
+      "Thế kỷ trống - Void Century (to be continued)",
+      {
+        type: "image",
+        src: `${baseUrl}Zoe.jpg`,
+        alt: "A daily memory snapshot",
+        caption: "A small memory from the academic journey.",
+        style: { width: "100%", maxWidth: "480px", height: "auto" }
+      }
+    ],
     category: "Daily Life",
     iconName: "Compass",
     location: "KAIST Campus, Daejeon, South Korea"
@@ -195,7 +223,9 @@ export const memories: Memory[] = [
     id: "m2",
     title: "2025 Life",
     date: "October 16, 2025",
-    description: "Thế kỷ trống - Void Century (to be continued)",
+    description: [
+      "Thế kỷ trống - Void Century (to be continued)"
+    ],
     category: "Daily Life",
     iconName: "ThermometerCheck",
     location: "AKSELOS, Ho Chi Minh city, Vietnam"
@@ -204,7 +234,9 @@ export const memories: Memory[] = [
     id: "m3",
     title: "A long flight to Taipei following new aspirations",
     date: "February 15, 2026",
-    description: "GANGGG!",
+    description: [
+      "GANGGG!"
+    ],
     category: "Field Trip",
     iconName: "Presentation",
     location: "National Taiwan University, Taipei"

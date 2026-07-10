@@ -1,14 +1,14 @@
+import type { CSSProperties } from "react";
+
 export interface BlogImageContent {
   type: "image";
   src: string;
   alt: string;
   caption?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
 }
 
-export type BlogContentItem = string | BlogImageContent;
-
-import type { CSSProperties } from "react";
+export type RichContentItem = string | BlogImageContent;
 
 export interface BlogPost {
   id: string;
@@ -17,7 +17,7 @@ export interface BlogPost {
   category: "Academic" | "Survival Guide" | "Reflection";
   readTime: string;
   summary: string;
-  content: BlogContentItem[];
+  content: RichContentItem[];
   tags: string[];
 }
 
@@ -32,7 +32,7 @@ export interface ResearchProject {
   id: string;
   title: string;
   subtitle: string;
-  abstract: string;
+  abstract: RichContentItem[];
   methodology: string[];
   keyFindings: string[];
   status: "Completed" | "In Progress" | "In Review";
@@ -61,7 +61,7 @@ export interface Memory {
   id: string;
   title: string;
   date: string;
-  description: string;
+  description: RichContentItem[];
   category: "Academic" | "Daily Life" | "Field Trip" | "Lab Fun";
   iconName: string;
   location: string;
@@ -73,7 +73,7 @@ export interface PhilosophyItem {
   vietnameseTitle: string;
   quote: string;
   author: string;
-  content: string;
+  content: RichContentItem[];
 }
 
 export interface EducationItem {

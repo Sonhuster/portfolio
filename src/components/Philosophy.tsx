@@ -2,11 +2,42 @@ import React, { useState } from "react";
 import { motion } from "motion/react";
 import { Quote, Sparkles, BookOpen, Compass, Heart } from "lucide-react";
 import { philosophies } from "../data";
+import type { RichContentItem } from "../types";
 
 export default function Philosophy() {
   const [selectedIdx, setSelectedIdx] = useState<number>(0);
 
   const icons = [Compass, Sparkles, Heart];
+
+  const renderRichContent = (content: RichContentItem[]) => (
+    <div className="space-y-4">
+      {content.map((item, idx) => {
+        if (typeof item === "string") {
+          return (
+            <p key={idx} className="text-slate-600 text-xs md:text-sm leading-relaxed">
+              {item}
+            </p>
+          );
+        }
+
+        return (
+          <figure key={idx} className="flex justify-center">
+            <img
+              src={item.src}
+              alt={item.alt}
+              className="rounded-xl border border-slate-200 object-cover shadow-sm"
+              style={item.style}
+            />
+            {item.caption && (
+              <figcaption className="mt-2 text-center text-[11px] text-slate-500">
+                {item.caption}
+              </figcaption>
+            )}
+          </figure>
+        );
+      })}
+    </div>
+  );
 
   return (
     <div id="philosophy-section-card" className="bg-white rounded-2xl border border-[#e9ecef] p-6 md:p-8 shadow-xs">
@@ -102,9 +133,7 @@ export default function Philosophy() {
               {/* Interpretation Commentary */}
               <div className="border-t border-slate-200/60 pt-6">
                 <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-600 mb-2">Personal Interpretation</div>
-                <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
-                  {philosophies[selectedIdx].content}
-                </p>
+                {renderRichContent(philosophies[selectedIdx].content)}
               </div>
 
             </div>

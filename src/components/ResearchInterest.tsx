@@ -14,9 +14,40 @@ import {
   Award
 } from "lucide-react";
 import { profileData, researchProjects } from "../data";
+import type { RichContentItem } from "../types";
 
 export default function ResearchInterest() {
   const [activeProjectIdx, setActiveProjectIdx] = useState<number | null>(0);
+
+  const renderRichContent = (content: RichContentItem[]) => (
+    <div className="space-y-3">
+      {content.map((item, idx) => {
+        if (typeof item === "string") {
+          return (
+            <p key={idx} className="text-slate-600 text-xs md:text-sm leading-relaxed font-sans">
+              {item}
+            </p>
+          );
+        }
+
+        return (
+          <figure key={idx} className="mt-2">
+            <img
+              src={item.src}
+              alt={item.alt}
+              className="w-full rounded-xl border border-slate-200 object-cover shadow-sm"
+              style={item.style}
+            />
+            {item.caption && (
+              <figcaption className="mt-2 text-center text-[11px] text-slate-500">
+                {item.caption}
+              </figcaption>
+            )}
+          </figure>
+        );
+      })}
+    </div>
+  );
 
   return (
     <motion.div 
@@ -112,9 +143,7 @@ export default function ResearchInterest() {
                         {/* Abstract */}
                         <div className="space-y-1.5">
                           <h6 className="text-[10px] font-bold text-slate-400 font-mono tracking-wider uppercase">Research Abstract</h6>
-                          <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-sans">
-                            {project.abstract}
-                          </p>
+                          {renderRichContent(project.abstract)}
                         </div>
 
                         {/* Two column metrics */}

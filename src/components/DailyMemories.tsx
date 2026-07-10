@@ -12,6 +12,7 @@ import {
   Image as ImageIcon 
 } from "lucide-react";
 import { memories } from "../data";
+import type { RichContentItem } from "../types";
 
 export default function DailyMemories() {
   const [activeFilter, setActiveFilter] = useState<string>("All");
@@ -47,6 +48,44 @@ export default function DailyMemories() {
       case "Academic": return "bg-purple-50/70 text-purple-800 border-purple-100";
       default: return "bg-slate-50 text-slate-800 border-slate-150";
     }
+  };
+
+  const renderRichContent = (content: RichContentItem[], isExpanded: boolean) => (
+    <div className="space-y-3">
+      {content.map((item, idx) => {
+        if (typeof item === "string") {
+          return (
+            <p
+              key={idx}
+              className={`text-xs md:text-sm leading-relaxed ${isExpanded ? "text-slate-300" : "text-slate-600 line-clamp-2"}`}
+            >
+              {item}
+            </p>
+          );
+        }
+
+        return (
+          <figure key={idx} className="mt-2">
+            <img
+              src={item.src}
+              alt={item.alt}
+              className="w-full rounded-xl border border-slate-200 object-cover shadow-sm"
+              style={item.style}
+            />
+            {item.caption && (
+              <figcaption className="mt-2 text-[11px] text-slate-500">
+                {item.caption}
+              </figcaption>
+            )}
+          </figure>
+        );
+      })}
+    </div>
+  );
+
+  const getPreviewText = (content: RichContentItem[]) => {
+    const firstText = content.find((item): item is string => typeof item === "string");
+    return firstText ?? "No description available";
   };
 
   return (
@@ -131,13 +170,13 @@ export default function DailyMemories() {
                   <MapPin className="w-3 h-3 text-blue-500" /> {m.location}
                 </div>
 
-                <p className={`text-xs md:text-sm leading-relaxed mt-3.5 ${
-                  isExpanded 
-                    ? "text-slate-300 font-normal lg:max-w-4xl" 
-                    : "text-slate-600 line-clamp-2"
-                }`}>
-                  {m.description}
-                </p>
+                <div className="mt-3.5">
+                  {isExpanded ? renderRichContent(m.description, true) : (
+                    <p className="text-xs md:text-sm leading-relaxed text-slate-600 line-clamp-2">
+                      {getPreviewText(m.description)}
+                    </p>
+                  )}
+                </div>
               </div>
 
               {/* Action: Expand Story to Read */}
