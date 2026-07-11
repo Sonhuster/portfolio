@@ -73,7 +73,7 @@ export default function App() {
     // vibe: string;
   }> = {
     "education": {
-      title: "Be a man : )",
+      title: "A handsome man : )",
       subtitle: "Academic Journey & Background",
       description: "Just store my stuffs.",
       image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1200&auto=format&fit=crop",
